@@ -13,3 +13,6 @@ E:\project\asp\Shop\Shop.Core\obj\Debug\net5.0\Shop.Core.pdb
 E:\project\asp\Shop\Shop.Core\bin\Debug\net5.0\Shop.Core.runtimeconfig.json
 E:\project\asp\Shop\Shop.Core\bin\Debug\net5.0\Shop.Core.runtimeconfig.dev.json
 E:\project\asp\Shop\Shop.Core\obj\Debug\net5.0\Shop.Core.genruntimeconfig.cache
+E:\project\asp\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.dll
+E:\project\asp\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.pdb
+E:\project\asp\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.CopyComplete
