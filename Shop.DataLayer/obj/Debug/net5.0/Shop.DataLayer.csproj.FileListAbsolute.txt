@@ -1,0 +1,15 @@
+E:\project\asp\Shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.deps.json
+E:\project\asp\Shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.dll
+E:\project\asp\Shop\Shop.DataLayer\bin\Debug\net5.0\ref\Shop.DataLayer.dll
+E:\project\asp\Shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.pdb
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.AssemblyInfoInputs.cache
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.AssemblyInfo.cs
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.csproj.CoreCompileInputs.cache
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.dll
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\ref\Shop.DataLayer.dll
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.pdb
+E:\project\asp\Shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.runtimeconfig.json
+E:\project\asp\Shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.runtimeconfig.dev.json
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.genruntimeconfig.cache
+E:\project\asp\Shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.csprojAssemblyReference.cache

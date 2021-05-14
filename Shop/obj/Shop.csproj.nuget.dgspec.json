@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\project\\asp\\shop\\Shop\\Shop.csproj": {}
+    "E:\\project\\asp\\Shop\\Shop\\Shop.csproj": {}
   },
   "projects": {
-    "E:\\project\\asp\\shop\\Shop\\Shop.csproj": {
+    "E:\\project\\asp\\Shop\\Shop\\Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\project\\asp\\shop\\Shop\\Shop.csproj",
+        "projectUniqueName": "E:\\project\\asp\\Shop\\Shop\\Shop.csproj",
         "projectName": "Shop",
-        "projectPath": "E:\\project\\asp\\shop\\Shop\\Shop.csproj",
+        "projectPath": "E:\\project\\asp\\Shop\\Shop\\Shop.csproj",
         "packagesPath": "C:\\Users\\wolf\\.nuget\\packages\\",
-        "outputPath": "E:\\project\\asp\\shop\\Shop\\obj\\",
+        "outputPath": "E:\\project\\asp\\Shop\\Shop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,22 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -60,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
