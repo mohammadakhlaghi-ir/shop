@@ -7839,11 +7839,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\project\\asp\\shop\\Shop\\Shop.csproj",
+      "projectUniqueName": "E:\\project\\asp\\Shop\\Shop\\Shop.csproj",
       "projectName": "Shop",
-      "projectPath": "E:\\project\\asp\\shop\\Shop\\Shop.csproj",
+      "projectPath": "E:\\project\\asp\\Shop\\Shop\\Shop.csproj",
       "packagesPath": "C:\\Users\\wolf\\.nuget\\packages\\",
-      "outputPath": "E:\\project\\asp\\shop\\Shop\\obj\\",
+      "outputPath": "E:\\project\\asp\\Shop\\Shop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7863,11 +7863,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\project\\asp\\shop\\Shop.Core\\Shop.Core.csproj": {
-              "projectPath": "E:\\project\\asp\\shop\\Shop.Core\\Shop.Core.csproj"
+            "E:\\project\\asp\\Shop\\Shop.Core\\Shop.Core.csproj": {
+              "projectPath": "E:\\project\\asp\\Shop\\Shop.Core\\Shop.Core.csproj"
             },
-            "E:\\project\\asp\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj": {
-              "projectPath": "E:\\project\\asp\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj"
+            "E:\\project\\asp\\Shop\\Shop.DataLayer\\Shop.DataLayer.csproj": {
+              "projectPath": "E:\\project\\asp\\Shop\\Shop.DataLayer\\Shop.DataLayer.csproj"
             }
           }
         }

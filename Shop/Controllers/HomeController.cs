@@ -8,10 +8,8 @@ namespace Shop
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
-        {
-            return Content("Salam ");
-        }
+        public IActionResult Index() => View();
+
         [Route("/Home/HandleError/{code:int}")]
         public IActionResult HandleError(int code)
         {

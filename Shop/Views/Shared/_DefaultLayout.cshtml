@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" >
+@*<head>
+    <meta charset="UTF-8">
+    <title> تاپ لرن | @ViewData["Title"] </title>
+    <partial name="_MetaTags" />
+    <partial name="_Styles" />
+    <script src="/js/jquery.min.js"></script>
+</head>*@
+<head>
+    <meta charset="UTF-8" />
+    <partial name="_MetaTags" />
+    <link href="image/favicon.png" rel="icon" />
+    <title>فروشگاه تم محمد اخلاقی | @ViewData["Title"]</title>
+    <meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
+    <!-- CSS Part Start-->
+    <link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/stylesheet-rtl.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive-rtl.css" />
+    <link rel="stylesheet" type="text/css" href="css/stylesheet-skin2.css" />
+
+    <!-- CSS Part End-->
+</head>
+<body>
+    <script src="/js/modernizr-custom.js"></script>
+
+    <div class="landing-layer">
+        <div class="container">
+            <nav>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <ul>
+                            <li>
+                                <a href=""> همکاری در فروش </a>
+                                <a href=""> درباره ما </a>
+                                <a href=""> تماس با ما </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="clientarea">
+                            <div class="loggein hidden">
+                                <i class="zmdi zmdi-account"></i><a href=""> ایمان مدائنی ، خوش آمدی </a>
+                            </div>
+                            <div class="signin">
+                                <i class="zmdi zmdi-account"></i>
+                                <a href=""> ورود </a> /
+                                <a href=""> عضویت </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            @RenderSection("SearchBox", false)
+        </div>
+    </div>
+
+    <!-- main manu -->
+    <partial name="_MainMenu" />
+    <!-- /main manu -->
+    <!-- content -->
+    @RenderBody()
+    <!-- /content -->
+    <!-- footer -->
+    <partial name="_Footer" />
+    <!-- /footer -->
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
