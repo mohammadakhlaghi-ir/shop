@@ -58,7 +58,7 @@ namespace Shop
                 await next();
                 if (context.Response.StatusCode == 404)
                 {
-                    context.Request.Path = "/Home";
+                    context.Request.Path = "/Error";
                     await next();
                 }
             });

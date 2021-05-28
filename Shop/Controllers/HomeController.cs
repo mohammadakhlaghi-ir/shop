@@ -8,7 +8,10 @@ namespace Shop
 {
     public class HomeController : Controller
     {
-        public IActionResult Index() => View();
+        public IActionResult Index() {
+            ViewBag.keywords = "فروشگاه قالب و پلاگین محمد اخلاقی | محمد اخلاقی | ";
+            ViewBag.Descption = "فروشگاه قالب و پلاگین اختصاصی و غیر اختصاصی محمد اخلاقی برنامه نویس تحت بک اند و اپلیکیشن";
+            return View(); }
 
         [Route("/Home/HandleError/{code:int}")]
         public IActionResult HandleError(int code)

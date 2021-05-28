@@ -6444,11 +6444,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\project\\asp\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj",
+      "projectUniqueName": "E:\\project\\asp\\Shop\\Shop.DataLayer\\Shop.DataLayer.csproj",
       "projectName": "Shop.DataLayer",
-      "projectPath": "E:\\project\\asp\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj",
+      "projectPath": "E:\\project\\asp\\Shop\\Shop.DataLayer\\Shop.DataLayer.csproj",
       "packagesPath": "C:\\Users\\wolf\\.nuget\\packages\\",
-      "outputPath": "E:\\project\\asp\\shop\\Shop.DataLayer\\obj\\",
+      "outputPath": "E:\\project\\asp\\Shop\\Shop.DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6522,7 +6522,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -9,7 +9,6 @@ E:\project\asp\shop\Shop\bin\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Shop.Views.dll
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Shop.Views.pdb
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.csprojAssemblyReference.cache
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.GeneratedMSBuildEditorConfig.editorconfig
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.AssemblyInfoInputs.cache
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.AssemblyInfo.cs
@@ -23,13 +22,6 @@ E:\project\asp\shop\Shop\obj\Debug\net5.0\scopedcss\bundle\Shop.styles.css
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.TagHelpers.input.cache
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.TagHelpers.output.cache
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.RazorCoreGenerate.cache
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Razor\Pages\Privacy.cshtml.g.cs
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
-E:\project\asp\shop\Shop\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.RazorTargetAssemblyInfo.cache
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.RazorTargetAssemblyInfo.cs
 E:\project\asp\shop\Shop\obj\Debug\net5.0\Shop.Views.pdb
@@ -150,3 +142,15 @@ E:\project\asp\shop\Shop\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-a
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Shop.Core.dll
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Shop.Core.pdb
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Shop.csproj.AssemblyReference.cache
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Error.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_MainMenu.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_MetaTags.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Styles.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_TopBar.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
