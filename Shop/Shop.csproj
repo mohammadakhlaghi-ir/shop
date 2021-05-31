@@ -311,7 +311,6 @@
     <Content Remove="wwwroot\image\flags\zm.png" />
     <Content Remove="wwwroot\image\flags\zw.png" />
     <Content Remove="wwwroot\image\grabbing.png" />
-    <Content Remove="wwwroot\image\logo-small.png" />
     <Content Remove="wwwroot\image\no_image.jpg" />
     <Content Remove="wwwroot\image\patterns\1.png" />
     <Content Remove="wwwroot\image\patterns\10.png" />
@@ -1019,7 +1018,6 @@
     <None Include="wwwroot\image\flags\zm.png" />
     <None Include="wwwroot\image\flags\zw.png" />
     <None Include="wwwroot\image\grabbing.png" />
-    <None Include="wwwroot\image\logo-small.png" />
     <None Include="wwwroot\image\no_image.jpg" />
     <None Include="wwwroot\image\patterns\1.png" />
     <None Include="wwwroot\image\patterns\10.png" />
