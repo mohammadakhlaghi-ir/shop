@@ -143,7 +143,6 @@ E:\project\asp\shop\Shop\bin\Debug\net5.0\Shop.Core.dll
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Shop.Core.pdb
 E:\project\asp\shop\Shop\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Shop.csproj.AssemblyReference.cache
-E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Error.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
@@ -154,3 +153,4 @@ E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Styles.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_TopBar.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.cs

@@ -13,11 +13,11 @@ namespace Shop
             ViewBag.Descption = "فروشگاه قالب و پلاگین اختصاصی و غیر اختصاصی محمد اخلاقی برنامه نویس تحت بک اند و اپلیکیشن";
             return View(); }
 
-        [Route("/Home/HandleError/{code:int}")]
-        public IActionResult HandleError(int code)
+        [Route("Error")]
+        public IActionResult Error()
         {
-            ViewData["ErrorMessage"] = $"Error occurred. The ErrorCode is: {code}";
-            return View("~/Views/Shared/HandleError.cshtml");
+           
+            return View();
         }
     }
 
