@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Shop.Core.Services.Interfaces;
+using Shop.Core.Services;
 
 namespace Shop
 {
@@ -37,6 +39,7 @@ namespace Shop
             );
 
             #endregion
+            services.AddTransient<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
