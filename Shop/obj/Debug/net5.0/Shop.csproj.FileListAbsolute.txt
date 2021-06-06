@@ -155,3 +155,4 @@ E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\SuccessRegister.cshtml.g.cs

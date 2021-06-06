@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shop.Core.Convertors;
 using Shop.Core.DTOs;
+using Shop.Core.Generator;
+using Shop.Core.Security;
 using Shop.Core.Services.Interfaces;
+using Shop.DataLayer.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +26,7 @@ namespace Shop.Controllers
             return View();
         }
         [HttpPost]
+        [Route("Register")]
         public IActionResult Register(RegisterViewModel register)
         {
             if (!ModelState.IsValid)
@@ -38,7 +42,20 @@ namespace Shop.Controllers
                 ModelState.AddModelError("Email", "ایمیل معتبر نمی باشد");
                 return View(register);
             }
-            return View();
+            
+          
+            DataLayer.Entities.User.User user = new User()
+            {
+                ActiveCode = NameGenerator.GenerateUniqCode(),
+                Email = FixedText.FixEmail(register.Email),
+                IsActive = false,
+                Password = PasswordHelper.EncodePasswordMd5(register.Password),
+                RegisterDate = DateTime.Now,
+                UserName = register.UserName
+            };
+            _userService.AddUser(user);
+
+            return View("SuccessRegister", user);
 
         }
         

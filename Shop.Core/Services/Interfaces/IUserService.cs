@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shop.DataLayer.Entities.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace Shop.Core.Services.Interfaces
     {
         bool IsExistUserName(string userName);
         bool IsExistEmail(string email);
-        //bool IsExistEmail(Func<string, string> fixEmail);
+        int AddUser(User user);
     }
 }

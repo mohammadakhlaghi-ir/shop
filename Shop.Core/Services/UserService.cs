@@ -1,5 +1,6 @@
 ﻿using Shop.Core.Services.Interfaces;
 using Shop.DataLayer.Context;
+using Shop.DataLayer.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,14 @@ namespace Shop.Core.Services
         {
             return _context.Users.Any(u => u.Email == email);
         }
+
+        public int AddUser(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            return user.UserId;
+        }
+
+       
     }
 }
