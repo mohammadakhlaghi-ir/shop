@@ -20,6 +20,7 @@ namespace Shop.Controllers
             _userService = userService;
 
         }
+        #region register
         [Route("Register")]
         public IActionResult Register()
         {
@@ -38,12 +39,13 @@ namespace Shop.Controllers
                 ModelState.AddModelError("UserName", "نام کاربری معتبر نمی باشد");
                 return View(register);
             }
-            if (_userService.IsExistEmail(FixedText.FixEmail(register.Email))){
+            if (_userService.IsExistEmail(FixedText.FixEmail(register.Email)))
+            {
                 ModelState.AddModelError("Email", "ایمیل معتبر نمی باشد");
                 return View(register);
             }
-            
-          
+
+
             DataLayer.Entities.User.User user = new User()
             {
                 ActiveCode = NameGenerator.GenerateUniqCode(),
@@ -58,6 +60,50 @@ namespace Shop.Controllers
             return View("SuccessRegister", user);
 
         }
-        
+        #endregion
+        #region login
+        [Route("Login")]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public ActionResult Login(LoginViewModel login)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(login);
+            }
+
+            var user = _userService.LoginUser(login);
+            if (user != null)
+            {
+                if (user.IsActive)
+                {
+                    ViewBag.IsSuccess = true;
+                    return View();
+                }
+                else
+                {
+                    ModelState.AddModelError("Email", "حساب کاربری شما فعال نمی باشد");
+                }
+            }
+            ModelState.AddModelError("Email", "کاربری با مشخصات وارد شده یافت نشد");
+            return View(login);
+        }
+
+        #endregion
+        #region Active Account
+
+        public IActionResult ActiveAccount(string id)
+        {
+            ViewBag.IsActive = _userService.ActiveAccount(id);
+            return View();
+        }
+
+        #endregion
+
     }
 }

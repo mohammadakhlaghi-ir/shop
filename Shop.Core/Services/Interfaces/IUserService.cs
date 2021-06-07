@@ -1,4 +1,5 @@
-﻿using Shop.DataLayer.Entities.User;
+﻿using Shop.Core.DTOs;
+using Shop.DataLayer.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace Shop.Core.Services.Interfaces
         bool IsExistUserName(string userName);
         bool IsExistEmail(string email);
         int AddUser(User user);
+        User LoginUser(LoginViewModel login);
+        bool ActiveAccount(string activeCode);
     }
 }

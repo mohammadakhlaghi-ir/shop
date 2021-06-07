@@ -1,4 +1,8 @@
-﻿using Shop.Core.Services.Interfaces;
+﻿using Shop.Core.Convertors;
+using Shop.Core.DTOs;
+using Shop.Core.Generator;
+using Shop.Core.Security;
+using Shop.Core.Services.Interfaces;
 using Shop.DataLayer.Context;
 using Shop.DataLayer.Entities.User;
 using System;
@@ -33,7 +37,25 @@ namespace Shop.Core.Services
             _context.SaveChanges();
             return user.UserId;
         }
+        public User LoginUser(LoginViewModel login)
+        {
+            string hashPassword = PasswordHelper.EncodePasswordMd5(login.Password);
+            string email = FixedText.FixEmail(login.Email);
+            return _context.Users.SingleOrDefault(u => u.Email == email && u.Password == hashPassword);
+        }
 
-       
+        public bool ActiveAccount(string activeCode)
+        {
+            var user = _context.Users.SingleOrDefault(u => u.ActiveCode == activeCode);
+            if (user == null || user.IsActive)
+                return false;
+
+            user.IsActive = true;
+            user.ActiveCode = NameGenerator.GenerateUniqCode();
+            _context.SaveChanges();
+
+            return true;
+        }
+
     }
 }
