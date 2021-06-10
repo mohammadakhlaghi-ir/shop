@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Shop.Core.Convertors;
 using Shop.Core.DTOs;
 using Shop.Core.Generator;
@@ -8,6 +10,7 @@ using Shop.DataLayer.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Shop.Controllers
@@ -20,12 +23,14 @@ namespace Shop.Controllers
             _userService = userService;
 
         }
-        #region register
+        #region Register
+
         [Route("Register")]
         public IActionResult Register()
         {
             return View();
         }
+
         [HttpPost]
         [Route("Register")]
         public IActionResult Register(RegisterViewModel register)
@@ -34,11 +39,14 @@ namespace Shop.Controllers
             {
                 return View(register);
             }
+
+
             if (_userService.IsExistUserName(register.UserName))
             {
                 ModelState.AddModelError("UserName", "نام کاربری معتبر نمی باشد");
                 return View(register);
             }
+
             if (_userService.IsExistEmail(FixedText.FixEmail(register.Email)))
             {
                 ModelState.AddModelError("Email", "ایمیل معتبر نمی باشد");
@@ -57,11 +65,15 @@ namespace Shop.Controllers
             };
             _userService.AddUser(user);
 
-            return View("SuccessRegister", user);
+            //TODO Send Activation Email
 
+            return View("SuccessRegister", user);
         }
+
+
         #endregion
-        #region login
+
+        #region Login
         [Route("Login")]
         public ActionResult Login()
         {
@@ -82,6 +94,20 @@ namespace Shop.Controllers
             {
                 if (user.IsActive)
                 {
+                    var claims = new List<Claim>()
+                    {
+                        new Claim(ClaimTypes.NameIdentifier,user.UserId.ToString()),
+                        new Claim(ClaimTypes.Name,user.UserName)
+                    };
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var principal = new ClaimsPrincipal(identity);
+
+                    var properties = new AuthenticationProperties
+                    {
+                        IsPersistent = login.RememberMe
+                    };
+                    HttpContext.SignInAsync(principal, properties);
+
                     ViewBag.IsSuccess = true;
                     return View();
                 }
@@ -95,6 +121,7 @@ namespace Shop.Controllers
         }
 
         #endregion
+
         #region Active Account
 
         public IActionResult ActiveAccount(string id)
@@ -105,5 +132,14 @@ namespace Shop.Controllers
 
         #endregion
 
+        #region Logout
+        [Route("Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("/Login");
+        }
+
+        #endregion
     }
 }

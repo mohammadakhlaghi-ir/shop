@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Shop.Core.Services.Interfaces;
 using Shop.Core.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Shop
 {
@@ -39,7 +40,25 @@ namespace Shop
             );
 
             #endregion
+            #region Authentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            }).AddCookie(options =>
+            {
+                options.LoginPath = "/Login";
+                options.LogoutPath = "/Logout";
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
+
+            });
+            #endregion
+            #region Ioc
             services.AddTransient<IUserService, UserService>();
+
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +84,7 @@ namespace Shop
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
