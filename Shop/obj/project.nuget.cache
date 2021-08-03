@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mZK9IV1bIgWQfzXEWMGfrutO71fn1cC/LmJ4PhqrHdWFpz0o8HaVkW6lsQlQDWqi6x9T6D92EkUrAjaAjYsJNQ==",
+  "dgSpecHash": "87XbVneCiHCKNpQjn2xz3j94XERDzi4uKH4Kg450xYo172oSUpMQlkKI1gg9higUCjSvQKCtb1xUvudlruz3KA==",
   "success": true,
-  "projectFilePath": "E:\\project\\asp\\Shop\\Shop\\Shop.csproj",
+  "projectFilePath": "E:\\project\\asp\\shop\\shop\\Shop\\Shop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wolf\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.6\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.6.nupkg.sha512",
