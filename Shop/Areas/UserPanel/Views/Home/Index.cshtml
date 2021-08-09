@@ -1,0 +1,51 @@
+﻿@using Shop.Core.Convertors
+@model Shop.Core.DTOs.InformationUserViewModel
+@{
+    ViewData["Title"] = "پنل کاربری " + User.Identity.Name;
+}
+
+
+<div id="container">
+    <div class="container">
+        <!-- Breadcrumb Start-->
+        <ul class="breadcrumb">
+            <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+            <li><a href="login.html">حساب کاربری</a></li>
+
+        </ul>
+        <!-- Breadcrumb End-->
+        <div class="row">
+            <!--Middle Part Start-->
+            <div id="content" class="col-sm-9">
+
+                <h3 class="subtitle">اطلاعات حساب کاربری</h3>
+                <div class="list-group">
+                    <ul class="list-item">
+                        <li>نام کاربری : @Model.UserName</li>
+                        <li>ایمیل : @Model.Email</li>
+                        <li>تاریخ عضویت : @Model.RegisterDate.ToShamsi()</li>
+                        <li>موجودی کیف پول : @Model.Wallet تومان</li>
+
+                    </ul>
+                </div>
+            </div>
+            <!--Middle Part End -->
+            <!--Right Part Start -->
+            <aside id="column-right" class="col-sm-3 hidden-xs">
+                <h3 class="subtitle">حساب کاربری</h3>
+                <div class="list-group">
+                    <ul class="list-item">
+                        <li><a href="/ForgotPassword">تغییر رمز عبور</a></li>
+                        <li><a href="wishlist.html">لیست علاقه مندی</a></li>
+                        <li><a href="#">تاریخچه سفارشات</a></li>
+                        <li><a href="#">دانلود ها</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+
+
+            <!--Right Part End -->
+        </div>
+    </div>
+</div>

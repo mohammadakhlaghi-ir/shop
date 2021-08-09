@@ -18,7 +18,7 @@ namespace Shop.Core.Services
         private ShopContext _context;
         public UserService(ShopContext context)
         {
-        _context = context;
+            _context = context;
         }
 
 
@@ -57,5 +57,37 @@ namespace Shop.Core.Services
             return true;
         }
 
+        public User GetUserByEmail(string email)
+        {
+            return _context.Users.SingleOrDefault(u => u.Email == email);
+        }
+
+        public User GetUserByActiveCode(string activeCode)
+        {
+            return _context.Users.SingleOrDefault(u => u.ActiveCode == activeCode);
+        }
+
+        public void UpdateUser(User user)
+        {
+            _context.Update(user);
+            _context.SaveChanges();
+        }
+
+        public InformationUserViewModel GetUserInformation(string userName)
+        {
+            var user = GetUserByUserName(userName);
+            InformationUserViewModel information = new InformationUserViewModel();
+            information.UserName = user.UserName;
+            information.Email = user.Email;
+            information.RegisterDate = user.RegisterDate;
+            information.Wallet = 0;
+
+            return information;
+        }
+
+        public User GetUserByUserName(string userName)
+        {
+            return _context.Users.SingleOrDefault(u => u.UserName == userName);
+        }
     }
 }

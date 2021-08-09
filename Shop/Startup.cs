@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 using Shop.Core.Services.Interfaces;
 using Shop.Core.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Shop.Core.Convertors;
+using Microsoft.AspNetCore.Identity;
 
 namespace Shop
 {
@@ -32,6 +34,7 @@ namespace Shop
         {
             services.AddMvc();
             services.AddRazorPages();
+            services.AddAuthorization();
             #region DataBase Context
 
             services.AddDbContext<ShopContext>(options =>
@@ -58,7 +61,7 @@ namespace Shop
             #endregion
             #region Ioc
             services.AddTransient<IUserService, UserService>();
-
+            services.AddTransient<IViewRenderService, RenderViewToString>();
             #endregion
         }
 
@@ -89,8 +92,14 @@ namespace Shop
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                   name: "default",
+                   pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+      );
+
+
             });
         }
     }

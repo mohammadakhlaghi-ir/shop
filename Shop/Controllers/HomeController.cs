@@ -20,6 +20,12 @@ namespace Shop
            
             return View();
         }
+        [Authorize]
+        [Route("Test")]
+        public IActionResult Test()
+        {
+            return Content("test");
+        }
     }
 
 }

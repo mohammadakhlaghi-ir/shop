@@ -5,6 +5,7 @@ using Shop.Core.Convertors;
 using Shop.Core.DTOs;
 using Shop.Core.Generator;
 using Shop.Core.Security;
+using Shop.Core.Senders;
 using Shop.Core.Services.Interfaces;
 using Shop.DataLayer.Entities.User;
 using System;
@@ -18,9 +19,12 @@ namespace Shop.Controllers
     public class AccountController : Controller
     {
         private IUserService _userService;
-        public AccountController(IUserService userService)
+        private IViewRenderService _viewRender;
+
+        public AccountController(IUserService userService, IViewRenderService viewRender)
         {
             _userService = userService;
+            _viewRender = viewRender;
 
         }
         #region Register
@@ -65,7 +69,10 @@ namespace Shop.Controllers
             };
             _userService.AddUser(user);
 
-            //TODO Send Activation Email
+            #region Send Activation Email
+            string body = _viewRender.RenderToStringAsync("_ActiveEmail", user);
+            SendEmail.Send(user.Email, "فعال سازی", body);
+            #endregion
 
             return View("SuccessRegister", user);
         }
@@ -140,6 +147,55 @@ namespace Shop.Controllers
             return Redirect("/Login");
         }
 
+        #endregion
+        #region ForgotPassword
+        [Route("ForgotPassword")]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public ActionResult ForgotPassword(ForgotPasswordViewModel forgot)
+        {
+            if (!ModelState.IsValid)
+                return View(forgot);
+            string fixedEmail = FixedText.FixEmail(forgot.Email);
+            User user = _userService.GetUserByEmail(fixedEmail);
+            if (user == null)
+            {
+                ModelState.AddModelError("Email", "کاربری یافت نشد");
+                return View(forgot);
+            }
+            string bodyEmail = _viewRender.RenderToStringAsync("_ForgotPassword", user);
+            SendEmail.Send(user.Email, "بازیابی حساب کاربری", bodyEmail);
+            ViewBag.IsSuccess = true;
+            return View();
+        }
+        #endregion
+
+        #region ResetPasword
+        public ActionResult ResetPassword(string id)
+        {
+            return View(new ResetPasswrodViewModel()
+            {
+                ActiveCode = id
+            }) ;
+        }  
+        [HttpPost]
+        public ActionResult ResetPassword(ResetPasswrodViewModel reset)
+        {
+            if (!ModelState.IsValid)
+                return View(reset);
+
+            User user = _userService.GetUserByActiveCode(reset.ActiveCode);
+            if (user == null)
+                return NotFound();
+            string hashNewPassword = PasswordHelper.EncodePasswordMd5(reset.Password);
+            user.Password = hashNewPassword;
+            _userService.UpdateUser(user);
+            return Redirect("/Login");
+        }
         #endregion
     }
 }
