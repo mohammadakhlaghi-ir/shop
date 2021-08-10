@@ -21,6 +21,7 @@ namespace Shop.Core.Services.Interfaces
         bool ActiveAccount(string activeCode);
         #region User Panel
         InformationUserViewModel GetUserInformation(string userName);
+        SideBarUserPanelViewModel GetSideBarUserPanelData(string userName);
         #endregion
     }
 

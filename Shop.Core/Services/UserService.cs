@@ -89,5 +89,13 @@ namespace Shop.Core.Services
         {
             return _context.Users.SingleOrDefault(u => u.UserName == userName);
         }
+
+        public SideBarUserPanelViewModel GetSideBarUserPanelData(string userName)
+        {
+            return _context.Users.Where(u => u.UserName == userName).Select(u => new SideBarUserPanelViewModel()
+            {
+                UserName = u.UserName,
+            }).Single();
+        }
     }
 }
