@@ -97,5 +97,24 @@ namespace Shop.Core.Services
                 UserName = u.UserName,
             }).Single();
         }
+
+        public EditProfileViewModel GetDataForEditProfileUser(string userName)
+        {
+            return _context.Users.Where(u => u.UserName == userName).Select(u => new EditProfileViewModel()
+            {
+                Email = u.Email,
+                UserName = u.UserName
+            }).Single();
+        }
+
+
+        public void EditProfile(string userName, EditProfileViewModel profile)
+        {
+            var user = GetUserByUserName(userName);
+            user.UserName = profile.UserName;
+            user.Email = profile.Email;
+
+            UpdateUser(user);
+        }
     }
 }

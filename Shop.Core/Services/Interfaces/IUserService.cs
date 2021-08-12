@@ -22,6 +22,8 @@ namespace Shop.Core.Services.Interfaces
         #region User Panel
         InformationUserViewModel GetUserInformation(string userName);
         SideBarUserPanelViewModel GetSideBarUserPanelData(string userName);
+        EditProfileViewModel GetDataForEditProfileUser(string userName);
+        void EditProfile(string userName,EditProfileViewModel profile);
         #endregion
     }
 

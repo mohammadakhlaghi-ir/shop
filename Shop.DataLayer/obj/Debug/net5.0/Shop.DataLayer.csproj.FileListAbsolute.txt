@@ -27,3 +27,4 @@ E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\ref\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.pdb
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.genruntimeconfig.cache
+E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.csproj.AssemblyReference.cache
