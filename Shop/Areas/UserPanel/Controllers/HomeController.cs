@@ -44,5 +44,27 @@ namespace Shop.Areas.UserPanel.Controllers
 
             return Redirect("/Login?EditProfile=true");
         }
+        [Route("UserPanel/ChangePassword")]
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+        [Route("UserPanel/ChangePassword")]
+        [HttpPost]
+        public IActionResult ChangePassword(ChangePasswordViewModel change)
+        {
+            string currentUserName = User.Identity.Name;
+            if (!ModelState.IsValid)
+                return View(change);
+            if (!_userService.CompareOldPassword(change.OldPassword, currentUserName))
+            {
+                ModelState.AddModelError("OldPassword", "کلمه عبور فعلی صحیح نمی باشد");
+                return View(change);
+
+            }
+            _userService.ChangeUserPassword(currentUserName, change.Password);
+            ViewBag.IsSuccess = true;
+            return View();
+        }
     }
 }

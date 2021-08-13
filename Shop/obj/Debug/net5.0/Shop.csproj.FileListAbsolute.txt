@@ -297,7 +297,11 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\scopedcss\bundle\Shop.styles.css
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.TagHelpers.input.cache
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.TagHelpers.output.cache
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.RazorCoreGenerate.cache
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Home\ChangePassword.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Home\EditProfile.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Home\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Shared\_SideBar.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewImports.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewStart.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\ActiveAccount.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\ForgotPassword.cshtml.g.cs
@@ -327,6 +331,3 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Shared\_SideBar.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewImports.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Home\EditProfile.cshtml.g.cs
