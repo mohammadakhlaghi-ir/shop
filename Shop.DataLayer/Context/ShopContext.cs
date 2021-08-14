@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.DataLayer.Entities.User;
+using Shop.DataLayer.Entities.Wallet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,10 @@ namespace Shop.DataLayer.Context
         public DbSet<UserRole> UserRoles { get; set; }
 
 
+        #endregion
+        #region Wallet
+        public DbSet<WalletType> WalletTypes { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }
         #endregion
     }
 }

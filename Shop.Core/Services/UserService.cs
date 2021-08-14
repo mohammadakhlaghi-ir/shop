@@ -5,6 +5,7 @@ using Shop.Core.Security;
 using Shop.Core.Services.Interfaces;
 using Shop.DataLayer.Context;
 using Shop.DataLayer.Entities.User;
+using Shop.DataLayer.Entities.Wallet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +81,7 @@ namespace Shop.Core.Services
             information.UserName = user.UserName;
             information.Email = user.Email;
             information.RegisterDate = user.RegisterDate;
-            information.Wallet = 0;
+            information.Wallet = BalanceUserWallet(userName);
 
             return information;
         }
@@ -128,6 +129,56 @@ namespace Shop.Core.Services
             var user = GetUserByUserName(userName);
             user.Password = PasswordHelper.EncodePasswordMd5(newPassword);
             UpdateUser(user);
+        }
+
+        public int BalanceUserWallet(string userName)
+        {
+            int userId = GetUserIdByUserName(userName);
+            var enter = _context.Wallets.Where(w => w.UserId == userId && w.TypeId == 1 && w.IsPay).Select(w => w.Amount).ToList();
+            var exit = _context.Wallets.Where(w => w.UserId == userId && w.TypeId == 2).Select(w => w.Amount).ToList();
+            return (enter.Sum() - exit.Sum());
+        }
+
+        public int GetUserIdByUserName(string userName)
+        {
+            return _context.Users.Single(u => u.UserName == userName).UserId;
+        }
+
+        public List<WalletViewModel> GetWalletUser(string userName)
+        {
+            int userId = GetUserIdByUserName(userName);
+            return _context.Wallets.Where(w => w.IsPay && w.UserId == userId).
+                Select(w => new WalletViewModel()
+                {
+                    Amount = w.Amount,
+                    DateTime = w.CreateDate,
+                    Description = w.Description,
+                    TypeId = w.TypeId
+
+                })
+                .ToList();
+        }
+
+       
+
+        public void ChargeWallet(string userName, int amount,string description, bool isPay = false)
+        {
+            Wallet wallet = new Wallet
+            {
+                Amount = amount,
+                CreateDate = DateTime.Now,
+                Description = description,
+                IsPay = isPay,
+                TypeId = 1,
+                UserId = GetUserIdByUserName(userName)
+            };
+            AddWallet(wallet);
+        }
+
+        public void AddWallet(Wallet wallet)
+        {
+            _context.Wallets.Add(wallet);
+            _context.SaveChanges();
         }
     }
 }
