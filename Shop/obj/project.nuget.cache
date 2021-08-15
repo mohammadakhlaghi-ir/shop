@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "87XbVneCiHCKNpQjn2xz3j94XERDzi4uKH4Kg450xYo172oSUpMQlkKI1gg9higUCjSvQKCtb1xUvudlruz3KA==",
+  "dgSpecHash": "Y5y4W7q4WInxm1vZF4vsikXfG8rcrbg6TGTuwKKR1prHUARiXXoajV8AtRuYhWHF433q6Lyb9juqnt1QRjwUJA==",
   "success": true,
   "projectFilePath": "E:\\project\\asp\\shop\\shop\\Shop\\Shop.csproj",
   "expectedPackageFiles": [
@@ -134,7 +134,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\wolf\\.nuget\\packages\\zarinpalsandbox\\2.0.4\\zarinpalsandbox.2.0.4.nupkg.sha512"
   ],
   "logs": []
 }

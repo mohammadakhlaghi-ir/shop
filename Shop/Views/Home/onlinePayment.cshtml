@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "نتیجه پرداخت";
+}
+
+
+<div id="container">
+    <div class="container">
+        <!-- Breadcrumb Start-->
+        <ul class="breadcrumb">
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            <li><a href="/OnlinePayment">نتیجه پرداخت</a></li>
+        </ul>
+        @if (ViewBag.IsSuccess == true)
+        {
+            <div class="alert alert-success">
+                <h2 class="help-block">پرداخت با موفقیت انجام شد</h2>
+                <p>کد پیگیری : @ViewBag.Code</p>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger">
+                <h2 class="help-block">پرداخت با شکست مواجه شد</h2>
+            </div>
+        }
+    </div>
+    </div>
+</div>

@@ -332,3 +332,5 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Wallet\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\ZarinpalSandbox.dll
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\onlinePayment.cshtml.g.cs

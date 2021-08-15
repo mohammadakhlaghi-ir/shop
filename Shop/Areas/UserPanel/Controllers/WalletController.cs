@@ -35,8 +35,16 @@ namespace Shop.Areas.UserPanel.Controllers
                 return View(charge);
 
             }
-            _userService.ChargeWallet(User.Identity.Name, charge.Amount, "شارژ کیف پول");
-            //ToDO Online Payment
+            int walletId = _userService.ChargeWallet(User.Identity.Name, charge.Amount, "شارژ کیف پول");
+
+            #region Online Payment
+            var payment = new ZarinpalSandbox.Payment(charge.Amount);
+            var res = payment.PaymentRequest("شارژ کیف پول", "https://localhost:5001/OnlinePayment/" + walletId , "mohammadakhlaghi.ir@gmail.com","09378982060");
+            if(res.Result.Status == 100)
+            {
+                return Redirect("https://sandbox.zarinpal.com/pg/StartPay/" + res.Result.Authority);
+            }
+            #endregion
             return null;
         }
     }

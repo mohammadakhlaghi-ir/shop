@@ -32,8 +32,10 @@ namespace Shop.Core.Services.Interfaces
         #region Wallet
         int BalanceUserWallet(string userName);
         List<WalletViewModel> GetWalletUser(string userName);
-        void ChargeWallet(string userName, int amount ,string description, bool isPay=false);
-        void AddWallet(Wallet wallet);
+        int ChargeWallet(string userName, int amount ,string description, bool isPay=false);
+        int AddWallet(Wallet wallet);
+        Wallet GetWalletByWalletId(int walletId);
+        void UpdateWallet(Wallet wallet);
         #endregion
     }
 

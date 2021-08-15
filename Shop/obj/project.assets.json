@@ -2227,6 +2227,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ZarinpalSandbox/2.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.5",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/ZarinpalSandbox.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/ZarinpalSandbox.dll": {}
+        }
+      },
       "Shop.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7809,6 +7822,18 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "ZarinpalSandbox/2.0.4": {
+      "sha512": "bDuCkin4KqcZggLQBjDw0CK9PU6U8SmlLbJh7UHzcKBsSmKXmRE4myLls+A/cxDuqh0EucSAdthMiFM6odu58A==",
+      "type": "package",
+      "path": "zarinpalsandbox/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp1.0/ZarinpalSandbox.dll",
+        "zarinpalsandbox.2.0.4.nupkg.sha512",
+        "zarinpalsandbox.nuspec"
+      ]
+    },
     "Shop.Core/1.0.0": {
       "type": "project",
       "path": "../Shop.Core/Shop.Core.csproj",
@@ -7829,7 +7854,8 @@
       "Microsoft.NETCore.App >= 2.2.8",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "Shop.Core >= 1.0.0",
-      "Shop.DataLayer >= 1.0.0"
+      "Shop.DataLayer >= 1.0.0",
+      "ZarinPalSandbox >= 2.0.4"
     ]
   },
   "packageFolders": {
@@ -7910,6 +7936,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "ZarinPalSandbox": {
+            "target": "Package",
+            "version": "[2.0.4, )"
           }
         },
         "imports": [
