@@ -212,6 +212,7 @@ E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\System.Diagnostics.DiagnosticSour
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\System.Runtime.Caching.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\ZarinpalSandbox.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -301,8 +302,14 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Home\
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Home\EditProfile.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Home\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Shared\_SideBar.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Wallet\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewImports.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewStart.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Shared\_AdminLayout.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\ActiveAccount.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\ForgotPassword.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
@@ -311,6 +318,7 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\ResetPassword
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\SuccessRegister.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\onlinePayment.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\AccountNavbar.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_ActiveEmail.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
@@ -331,6 +339,3 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Wallet\Index.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\ZarinpalSandbox.dll
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\onlinePayment.cshtml.g.cs

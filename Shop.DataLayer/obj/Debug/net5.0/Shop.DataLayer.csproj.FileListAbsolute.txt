@@ -19,6 +19,7 @@ E:\project\asp\shop\shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.runtimec
 E:\project\asp\shop\shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.DataLayer\bin\Debug\net5.0\ref\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.DataLayer\bin\Debug\net5.0\Shop.DataLayer.pdb
+E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.csproj.AssemblyReference.cache
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.AssemblyInfoInputs.cache
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.AssemblyInfo.cs
@@ -27,4 +28,3 @@ E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\ref\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.pdb
 E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.genruntimeconfig.cache
-E:\project\asp\shop\shop\Shop.DataLayer\obj\Debug\net5.0\Shop.DataLayer.csproj.AssemblyReference.cache
