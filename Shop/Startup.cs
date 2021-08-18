@@ -62,6 +62,7 @@ namespace Shop
             #region Ioc
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IViewRenderService, RenderViewToString>();
+            services.AddTransient<IPermissionService, PermissionService>();
             #endregion
         }
 

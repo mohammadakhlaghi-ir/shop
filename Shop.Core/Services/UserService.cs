@@ -196,22 +196,40 @@ namespace Shop.Core.Services
         public UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "", string filterUserName = "")
         {
             IQueryable<User> result = _context.Users;
+
             if (!string.IsNullOrEmpty(filterEmail))
             {
                 result = result.Where(u => u.Email.Contains(filterEmail));
             }
+
             if (!string.IsNullOrEmpty(filterUserName))
             {
                 result = result.Where(u => u.UserName.Contains(filterUserName));
             }
-            //show item in page
-            int take = 10;
+
+            // Show Item In Page
+            int take = 20;
             int skip = (pageId - 1) * take;
+
+
             UserForAdminViewModel list = new UserForAdminViewModel();
             list.CurrentPage = pageId;
             list.PageCount = result.Count() / take;
             list.Users = result.OrderBy(u => u.RegisterDate).Skip(skip).Take(take).ToList();
+
             return list;
+        }
+
+        public int AddUserFromAdmin(CreateUserViewModel user)
+        {
+            User addUser = new User();
+            addUser.Password = PasswordHelper.EncodePasswordMd5(user.Password);
+            addUser.ActiveCode = NameGenerator.GenerateUniqCode();
+            addUser.Email = user.Email;
+            addUser.IsActive = true;
+            addUser.RegisterDate = DateTime.Now;
+            addUser.UserName = user.UserName;
+            return AddUser(addUser);
         }
     }
 }

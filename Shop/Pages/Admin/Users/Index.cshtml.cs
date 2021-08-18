@@ -17,10 +17,11 @@ namespace Shop.Pages.Admin.Users
             _userService = userService;
         }
         public UserForAdminViewModel UserForAdminViewModel { get; set; }
-        public void OnGet(int pageId=1,string filterUserName="",string filterEmail="")
+
+        public void OnGet(int pageId = 1, string filterUserName = "", string filterEmail = "")
         {
-            UserForAdminViewModel = _userService.GetUsers(pageId,filterUserName,filterEmail);
+            UserForAdminViewModel = _userService.GetUsers(pageId, filterEmail, filterUserName);
         }
-     
+
     }
 }
