@@ -1,8 +1,8 @@
-﻿@page 
+﻿@page
 @using Shop.Core.Convertors
-@model Shop.Pages.Admin.Users.IndexModel
+@model Shop.Pages.Admin.Users.ListDeleteUsersModel
 @{
-    ViewData["Title"] = "لیست کاربران";
+    ViewData["Title"] = "ListDeleteUsers";
 }
 
 <div class="row">
@@ -11,6 +11,7 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
 
 <div class="row">
     <div class="col-lg-12">
@@ -38,7 +39,7 @@
                         </div>
                         <div class="col-md-12" style="margin: 10px 0;">
 
-                            <a href="/Admin/Users/createUser" class="btn btn-outline btn-success">افزودن کاربر جدید</a>
+                            <a asp-page="CreateUser" class="btn btn-outline btn-success">افزودن کاربر جدید</a>
 
                         </div>
                         <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
@@ -72,7 +73,7 @@
                                             <a href="/Admin/Users/EditUser/@user.UserId" class="btn btn-warning btn-sm">
                                                 ویرایش
                                             </a>
-                                            <a href="/Admin/Users/DeleteUser/@user.UserId" class="btn btn-danger btn-sm">
+                                            <a href="#" class="btn btn-danger btn-sm">
                                                 حذف
                                             </a>
                                         </td>
@@ -83,17 +84,17 @@
                             <div class="col-sm-6">
                                 <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
                                     <ul class="pagination">
-                                 
-                                       @for (int i = 1; i <= Model.UserForAdminViewModel.PageCount; i++)
-                                       {
-                                           <li class="paginate_button @((i==Model.UserForAdminViewModel.CurrentPage)?"active":"")" aria-controls="dataTables-example" tabindex="0">
-                                               <a href="/Admin/Users?PageId=@i">@i</a>
-                                           </li>
-                                       }
+
+                                        @for (int i = 1; i <= Model.UserForAdminViewModel.PageCount; i++)
+                                        {
+                                            <li class="paginate_button @((i==Model.UserForAdminViewModel.CurrentPage)?"active":"")" aria-controls="dataTables-example" tabindex="0">
+                                                <a href="/Admin/Users?PageId=@i">@i</a>
+                                            </li>
+                                        }
 
                                     </ul>
-                                </div></div>
-                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

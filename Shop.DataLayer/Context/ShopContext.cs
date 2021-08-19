@@ -28,5 +28,11 @@ namespace Shop.DataLayer.Context
         public DbSet<WalletType> WalletTypes { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasQueryFilter(u => !u.IsDelete);
+            base.OnModelCreating(modelBuilder); 
+        }
     }
 }

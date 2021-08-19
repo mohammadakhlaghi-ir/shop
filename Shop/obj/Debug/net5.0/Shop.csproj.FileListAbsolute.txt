@@ -306,6 +306,8 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Walle
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewImports.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewStart.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\CreateUser.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\EditUser.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Shared\_AdminLayout.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
@@ -339,4 +341,5 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\CreateUser.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\DeleteUser.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\ListDeleteUsers.cshtml.g.cs

@@ -17,12 +17,16 @@ namespace Shop.Core.Services.Interfaces
         User LoginUser(LoginViewModel login);
         User GetUserByEmail(string email);
         User GetUserByUserName(string userName);
+        User GetUserById(int userId);
         User GetUserByActiveCode(string activeCode);
         void UpdateUser(User user);
         bool ActiveAccount(string activeCode);
         int GetUserIdByUserName(string userName);
+        void DeleteUser(int userId);
         #region User Panel
         InformationUserViewModel GetUserInformation(string userName);
+        InformationUserViewModel GetUserInformation(int userId);
+
         SideBarUserPanelViewModel GetSideBarUserPanelData(string userName);
         EditProfileViewModel GetDataForEditProfileUser(string userName);
         void EditProfile(string userName,EditProfileViewModel profile);
@@ -39,7 +43,11 @@ namespace Shop.Core.Services.Interfaces
         #endregion
         #region Admin Panel
         UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "", string filterUserName = "");
+        UserForAdminViewModel GetDeleteUsers(int pageId = 1, string filterEmail = "", string filterUserName = "");
+
         int AddUserFromAdmin(CreateUserViewModel user);
+        EditUserViewModel GetUserForShowInEditMode(int userId);
+        void EditUserFromAdmin(EditUserViewModel editUser);
         #endregion
     }
 
