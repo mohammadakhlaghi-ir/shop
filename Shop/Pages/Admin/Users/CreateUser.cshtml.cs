@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Shop.Core.DTOs;
+using Shop.Core.Security;
 using Shop.Core.Services.Interfaces;
 
 namespace Shop.Pages.Admin.Users
 {
+    [PermissionChecker(3)]
     public class CreateUserModel : PageModel
     {
         private IUserService _userService;

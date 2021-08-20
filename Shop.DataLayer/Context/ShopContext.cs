@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shop.DataLayer.Entities.Permission;
 using Shop.DataLayer.Entities.User;
 using Shop.DataLayer.Entities.Wallet;
 using System;
@@ -28,11 +29,18 @@ namespace Shop.DataLayer.Context
         public DbSet<WalletType> WalletTypes { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
         #endregion
+        #region Permission
 
+        public DbSet<Permission> Permission { get; set; }
+        public DbSet<RolePermission> RolePermission { get; set; }
+
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasQueryFilter(u => !u.IsDelete);
-            base.OnModelCreating(modelBuilder); 
+            modelBuilder.Entity<Role>().HasQueryFilter(r => !r.IsDelete);
+            base.OnModelCreating(modelBuilder);
+            
         }
     }
 }
