@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.DataLayer.Entities.Permission;
+using Shop.DataLayer.Entities.Product;
 using Shop.DataLayer.Entities.User;
 using Shop.DataLayer.Entities.Wallet;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Shop.DataLayer.Context
 {
-    public class ShopContext:DbContext
+    public class ShopContext : DbContext
     {
         public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
@@ -35,12 +36,18 @@ namespace Shop.DataLayer.Context
         public DbSet<RolePermission> RolePermission { get; set; }
 
         #endregion
+        #region Product
+
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasQueryFilter(u => !u.IsDelete);
             modelBuilder.Entity<Role>().HasQueryFilter(r => !r.IsDelete);
+            modelBuilder.Entity<ProductCategory>().HasQueryFilter(g => !g.IsDelete);
             base.OnModelCreating(modelBuilder);
-            
+
         }
     }
 }

@@ -327,7 +327,6 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_ForgotPassword.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_MainMenu.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_MetaTags.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Styles.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_TopBar.cshtml.g.cs
@@ -347,3 +346,4 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\Index.csh
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\CreateRole.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\DeleteRole.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\EditRole.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\Components\ProductCategoryComponent\ProductCategory.cshtml.g.cs
