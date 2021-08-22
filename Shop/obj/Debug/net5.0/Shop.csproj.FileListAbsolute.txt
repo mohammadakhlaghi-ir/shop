@@ -347,3 +347,5 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\CreateRol
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\DeleteRole.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\EditRole.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\Components\ProductCategoryComponent\ProductCategory.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\CreateProduct.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\Index.cshtml.g.cs

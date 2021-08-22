@@ -39,6 +39,9 @@ namespace Shop.DataLayer.Context
         #region Product
 
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductFile> ProductFiles { get; set; }
+
 
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -46,8 +49,10 @@ namespace Shop.DataLayer.Context
             modelBuilder.Entity<User>().HasQueryFilter(u => !u.IsDelete);
             modelBuilder.Entity<Role>().HasQueryFilter(r => !r.IsDelete);
             modelBuilder.Entity<ProductCategory>().HasQueryFilter(g => !g.IsDelete);
+            modelBuilder.Entity<Product>().HasOne<ProductCategory>(p => p.ProductCategory).WithMany(p => p.Products).HasForeignKey(c => c.CategoryId);
+            modelBuilder.Entity<Product>().HasOne<ProductCategory>(c => c.Category).WithMany(s => s.SubCategory).HasForeignKey(f => f.SubCategory);
             base.OnModelCreating(modelBuilder);
-
+            
         }
     }
 }

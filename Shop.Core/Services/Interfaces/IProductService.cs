@@ -1,4 +1,5 @@
-﻿using Shop.DataLayer.Entities.Product;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Shop.DataLayer.Entities.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace Shop.Core.Services.Interfaces
         #region Category
 
         List<ProductCategory> GetAllCategory();
-
+        List<SelectListItem> GetCategoryForManageProduct();
+        List<SelectListItem> GetSubCategoryForManageProduct(int groupId);
         #endregion
     }
 }

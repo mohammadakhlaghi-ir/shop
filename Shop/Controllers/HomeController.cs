@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Shop.Core.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace Shop
     public class HomeController : Controller
     {
         private IUserService _userService;
-        public HomeController(IUserService userService)
+        private IProductService _productService;
+        public HomeController(IUserService userService,IProductService productService)
         {
             _userService = userService;
+            _productService = productService;
         }
         public IActionResult Index() {
             ViewBag.keywords = "فروشگاه قالب و پلاگین محمد اخلاقی | محمد اخلاقی | ";
@@ -48,6 +51,16 @@ namespace Shop
             }
             return View();
         }
+        public IActionResult GetSubCategories(int id)
+        {
+            List<SelectListItem> list = new List<SelectListItem>()
+            {
+                new SelectListItem(){Text = "انتخاب کنید",Value = ""}
+            };
+            list.AddRange(_productService.GetSubCategoryForManageProduct(id));
+            return Json(new SelectList(list, "Value", "Text"));
+        }
+
     }
 
 }
