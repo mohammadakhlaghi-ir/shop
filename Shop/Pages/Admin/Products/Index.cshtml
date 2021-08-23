@@ -24,6 +24,38 @@
                     <a asp-page="CreateProduct" class="btn btn-outline btn-success">افزودن محصول جدید</a>
 
                 </div>
+
+                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                    <thead>
+                        <tr>
+                            <th>تصویر</th>
+                            <th>عنوان محصول</th>
+                            <th>دستورات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListProduct)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="/product/image/@item.ImageName" class="thumbnail" style="max-width: 120px" />
+                                </td>
+                                <td>
+                                    @item.Title
+                                </td>
+                                <td>
+                                    @*<a href="/Admin/Roles/EditRole/@role.RoleId" class="btn btn-warning btn-sm">
+                                            ویرایش
+                                        </a>
+                                        <a href="/Admin/Roles/DeleteRole/@role.RoleId" class="btn btn-danger btn-sm">
+                                            حذف
+                                        </a>*@
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
             </div>
             <!-- /.panel-body -->
         </div>

@@ -43,7 +43,7 @@ namespace Shop.DataLayer.Entities.Product
 
         [Required]
         public DateTime CreateDate { get; set; }
-
+        public bool IsDelete { get; set; }
 
 
         #region Relations

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Shop.Core.DTOs.Product;
 using Shop.DataLayer.Entities.Product;
 using System;
 using System.Collections.Generic;
@@ -16,5 +18,13 @@ namespace Shop.Core.Services.Interfaces
         List<SelectListItem> GetCategoryForManageProduct();
         List<SelectListItem> GetSubCategoryForManageProduct(int groupId);
         #endregion
+        #region Product
+        Product GetProductById(int productId);
+        List<ShowProductForAdminViewModel> GetProductsForAdmin();
+        void DeleteProduct(int productId);
+        int AddProduct(Product product, IFormFile imgCourse);
+
+        #endregion
     }
+
 }

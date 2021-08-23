@@ -49,6 +49,7 @@ namespace Shop.DataLayer.Context
             modelBuilder.Entity<User>().HasQueryFilter(u => !u.IsDelete);
             modelBuilder.Entity<Role>().HasQueryFilter(r => !r.IsDelete);
             modelBuilder.Entity<ProductCategory>().HasQueryFilter(g => !g.IsDelete);
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDelete);
             modelBuilder.Entity<Product>().HasOne<ProductCategory>(p => p.ProductCategory).WithMany(p => p.Products).HasForeignKey(c => c.CategoryId);
             modelBuilder.Entity<Product>().HasOne<ProductCategory>(c => c.Category).WithMany(s => s.SubCategory).HasForeignKey(f => f.SubCategory);
             base.OnModelCreating(modelBuilder);

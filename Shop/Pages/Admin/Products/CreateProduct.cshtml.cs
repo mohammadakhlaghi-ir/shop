@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -32,6 +33,15 @@ namespace Shop.Pages.Admin.Products
 
 
 
+        }
+        public IActionResult OnPost(IFormFile imgProductUp)
+        {
+            if (!ModelState.IsValid)
+                return Page();
+
+            _productService.AddProduct(Product, imgProductUp);
+
+            return RedirectToPage("Index");
         }
     }
 }
