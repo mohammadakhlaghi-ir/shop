@@ -159,6 +159,7 @@ E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\SuccessRegister.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\ActiveAccount.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\AccountNavbar.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\web.config
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\appsettings.Development.json
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\appsettings.json
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.exe
@@ -170,6 +171,7 @@ E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.Views.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.Views.pdb
+E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\CoreCompat.System.Drawing.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Humanizer.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -306,9 +308,19 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\Walle
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewImports.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\_ViewStart.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\CreateProduct.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\DeleteProduct.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\EditProduct.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\CreateRole.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\DeleteRole.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\EditRole.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\CreateUser.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\DeleteUser.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\EditUser.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\ListDeleteUsers.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Shared\_AdminLayout.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
@@ -322,6 +334,7 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.c
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\onlinePayment.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\AccountNavbar.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\Components\ProductCategoryComponent\ProductCategory.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_ActiveEmail.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
@@ -340,12 +353,3 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\DeleteUser.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Users\ListDeleteUsers.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\Index.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\CreateRole.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\DeleteRole.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Roles\EditRole.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\Components\ProductCategoryComponent\ProductCategory.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\CreateProduct.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Pages\Admin\Products\Index.cshtml.g.cs

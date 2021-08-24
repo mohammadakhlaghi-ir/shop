@@ -12,21 +12,22 @@ using Shop.DataLayer.Entities.Product;
 
 namespace Shop.Pages.Admin.Products
 {
-    [PermissionChecker(11)]
-    public class CreateProductModel : PageModel
+    [PermissionChecker(12)]
+    public class EditProductModel : PageModel
     {
         private IProductService _productService;
 
-        public CreateProductModel(IProductService productService)
+        public EditProductModel(IProductService productService)
         {
             _productService = productService;
         }
 
         [BindProperty]
         public Product Product { get; set; }
-
-        public void OnGet()
+        public void OnGet(int id)
         {
+            Product = _productService.GetProductById(id);
+
             var categories = _productService.GetCategoryForManageProduct();
             ViewData["Categories"] = new SelectList(categories, "Value", "Text");
 
@@ -35,15 +36,18 @@ namespace Shop.Pages.Admin.Products
 
 
 
+
         }
+
         public IActionResult OnPost(IFormFile imgProductUp)
         {
             if (!ModelState.IsValid)
                 return Page();
 
-            _productService.AddProduct(Product, imgProductUp);
+            _productService.UpdateProduct(Product, imgProductUp);
 
             return RedirectToPage("Index");
         }
+
     }
 }

@@ -1,11 +1,14 @@
-﻿@page
-@model Shop.Pages.Admin.Products.CreateProductModel
+﻿@page "{id}"
+@model Shop.Pages.Admin.Products.EditProductModel
 @{
-    ViewData["Title"] = "افزودن محصول جدید";
+    ViewData["Title"] = "ویرایش محصول";
 }
 
 <div class="row">
     <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Product.CreateDate" />
+        <input type="hidden" asp-for="Product.ProductId" />
+        <input type="hidden" asp-for="Product.ProductImageName" />
         <div class="col-md-8">
             <h2>اطلاعات محصول</h2>
             <hr />
@@ -16,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label>دسته بندی اصلی</label>
-                <select class="form-control" asp-for="Product.CategoryId" asp-items="@(ViewData["Categories"] as SelectList)"></select>
+                <select class="form-control" asp-for="Product.ProductId" asp-items="@(ViewData["Categories"] as SelectList)"></select>
                 <span asp-validation-for="Product.CategoryId"></span>
             </div>
             <div class="form-group">
@@ -30,6 +33,7 @@
                 <textarea class="form-control" asp-for="Product.ProductDescription" rows="10"></textarea>
                 <span asp-validation-for="Product.ProductDescription"></span>
             </div>
+
             <div class="form-group">
                 <label>قیمت بدون تخفیف</label>
                 <input type="number" asp-for="Product.ProductPriceOld" value="0" class="form-control" />
@@ -40,35 +44,34 @@
                 <input type="number" asp-for="Product.ProductPrice" value="0" class="form-control" />
                 <span asp-validation-for="Product.ProductPrice"></span>
             </div>
-
             <div class="form-group">
-                <label>کلمات کلیدی </label>
+                <label>کلمات کلیدی محصول</label>
                 <input type="text" asp-for="Product.Tags" class="form-control">
                 <p class="help-block">کلمات را با - جدا کنید</p>
-                <span asp-validation-for="Product.ProductTitle"></span>
+                <span asp-validation-for="Product.Tags"></span>
             </div>
             <input type="submit" value="ذخیره اطلاعات" class="btn btn-success" />
         </div>
         <div class="col-md-4">
             <p></p>
-            <img id="imgProduct" class="thumbnail" src="/product/image/no-photo.jpg" />
+            <img id="imgProduct" class="thumbnail" src="/product/image/@Model.Product.ProductImageName" />
             <div class="form-group">
 
                 <label>انتخاب تصویر</label>
                 <input type="file" name="imgProductUp" id="imgProductUp">
             </div>
-
-
+          
+           
         </div>
     </form>
 </div>
 
 @section Scripts
-{
+    {
     <script>
         $("#Product_CategoryId").change(function () {
             $("#Product_SubCategory").empty();
-            $.getJSON("/home/GetSubCategories/" + $("#Product_CategoryId :selected").val(),
+            $.getJSON("/home/GetSubCategories/" + $("#Product_ProductId :selected").val(),
                 function (data) {
 
                     $.each(data,
@@ -99,6 +102,7 @@
             readURL(this);
         });
     </script>
+
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
     <script>
 
@@ -108,3 +112,5 @@
 
     </script>
 }
+
+

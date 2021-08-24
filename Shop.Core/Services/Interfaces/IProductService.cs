@@ -21,8 +21,10 @@ namespace Shop.Core.Services.Interfaces
         #region Product
         Product GetProductById(int productId);
         List<ShowProductForAdminViewModel> GetProductsForAdmin();
-        void DeleteProduct(int productId);
-        int AddProduct(Product product, IFormFile imgCourse);
+        
+        int AddProduct(Product product, IFormFile imgProdcut);
+        void UpdateProduct(Product product, IFormFile imgProdcut);
+        void DeleteProduct(Product product);
 
         #endregion
     }

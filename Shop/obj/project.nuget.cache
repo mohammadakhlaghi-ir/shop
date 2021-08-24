@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Y5y4W7q4WInxm1vZF4vsikXfG8rcrbg6TGTuwKKR1prHUARiXXoajV8AtRuYhWHF433q6Lyb9juqnt1QRjwUJA==",
+  "dgSpecHash": "Dai9jpgslrumyWcVhcaVwRLs1yxnisb58GqQ4VZPjUGosvGHNdymR4jzWEmWUBR7zWHDHe8qV0kL4Fbf0XHfiA==",
   "success": true,
   "projectFilePath": "E:\\project\\asp\\shop\\shop\\Shop\\Shop.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\wolf\\.nuget\\packages\\corecompat.system.drawing.v2\\5.2.0-preview1-r131\\corecompat.system.drawing.v2.5.2.0-preview1-r131.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.6\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

@@ -695,6 +695,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CoreCompat.System.Drawing.v2" Version="5.2.0-preview1-r131" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
@@ -1445,6 +1446,10 @@
     <None Include="wwwroot\revolution\php\twitter\RestApi.php" />
     <None Include="wwwroot\revolution\php\vimeo\class-vimeo.php" />
     <None Include="wwwroot\revolution\php\youtube\class-youtube.php" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\MyImages\" />
   </ItemGroup>
 
 

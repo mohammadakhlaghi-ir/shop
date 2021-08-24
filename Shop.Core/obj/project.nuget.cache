@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "phppYL3OOqNEanaDmDyLD+7kzn1I/K9FmrpwCt7Tc6VqdUpLmdNbLk0Sv+wFXjjuhdNGrPP6CaXXtVPlMR6qaw==",
+  "dgSpecHash": "vyMHnnzRdZ6t1yvXouMq2m7M88pgRtH/16bpaCGWcpVeoYIed0ahKRjPGkQpCzLyZX1YiESqrtJ7QZ4qxyW2gQ==",
   "success": true,
   "projectFilePath": "E:\\project\\asp\\shop\\shop\\Shop.Core\\Shop.Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\wolf\\.nuget\\packages\\corecompat.system.drawing.v2\\5.2.0-preview1-r131\\corecompat.system.drawing.v2.5.2.0-preview1-r131.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.6\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

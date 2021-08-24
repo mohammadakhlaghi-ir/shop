@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Shop.Core.Convertors;
 using Shop.Core.DTOs.Product;
 using Shop.Core.Generator;
+using Shop.Core.Security;
 using Shop.Core.Services.Interfaces;
 using Shop.DataLayer.Context;
 using Shop.DataLayer.Entities.Product;
@@ -9,8 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop.Core.Services
 {
@@ -37,9 +37,13 @@ namespace Shop.Core.Services
                 {
                     imgProduct.CopyTo(stream);
                 }
+                ImageConvertor imgResizer = new ImageConvertor();
+                string thumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/thumb", product.ProductImageName);
+
+                imgResizer.Image_resize(imagePath, thumbPath, 150);
             }
 
-            
+
 
             _context.Add(product);
             _context.SaveChanges();
@@ -47,13 +51,8 @@ namespace Shop.Core.Services
             return product.ProductId;
         }
 
-        public void DeleteProduct(int productId)
-        {
-            Product product = GetProductById(productId);
-            product.IsDelete = true;
-            _context.Update(product);
-            _context.SaveChanges();
-        }
+
+
 
         public List<ProductCategory> GetAllCategory()
         {
@@ -82,7 +81,8 @@ namespace Shop.Core.Services
             {
                 ProductId = p.ProductId,
                 ImageName = p.ProductImageName,
-                Title = p.ProductTitle
+                Title = p.ProductTitle,
+                Price = p.ProductPrice
             }).ToList();
 
         }
@@ -97,5 +97,52 @@ namespace Shop.Core.Services
                }).ToList();
 
         }
+
+        public void UpdateProduct(Product product, IFormFile imgProdcut)
+        {
+
+
+            if (imgProdcut != null && imgProdcut.IsImage())
+            {
+                if (product.ProductImageName != "no-photo.jpg")
+                {
+                    string deleteimagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", product.ProductImageName);
+                    if (File.Exists(deleteimagePath))
+                    {
+                        File.Delete(deleteimagePath);
+                    }
+
+                    string deletethumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/thumb", product.ProductImageName);
+                    if (File.Exists(deletethumbPath))
+                    {
+                        File.Delete(deletethumbPath);
+                    }
+                }
+                product.ProductImageName = NameGenerator.GenerateUniqCode() + Path.GetExtension(imgProdcut.FileName);
+                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", product.ProductImageName);
+
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imgProdcut.CopyTo(stream);
+                }
+
+                ImageConvertor imgResizer = new ImageConvertor();
+                string thumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/thumb", product.ProductImageName);
+
+                imgResizer.Image_resize(imagePath, thumbPath, 150);
+            }
+
+
+
+            _context.Products.Update(product);
+            _context.SaveChanges();
+        }
+        public void DeleteProduct(Product product)
+        {
+            product.IsDelete = true;
+            _context.Products.Update(product);
+            _context.SaveChanges();
+        }
+
     }
 }
