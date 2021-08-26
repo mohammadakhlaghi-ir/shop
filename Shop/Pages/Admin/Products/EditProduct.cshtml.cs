@@ -29,10 +29,10 @@ namespace Shop.Pages.Admin.Products
             Product = _productService.GetProductById(id);
 
             var categories = _productService.GetCategoryForManageProduct();
-            ViewData["Categories"] = new SelectList(categories, "Value", "Text");
+            ViewData["Categories"] = new SelectList(categories, "Value", "Text", Product.CategoryId);
 
             var subCategories = _productService.GetSubCategoryForManageProduct(int.Parse(categories.First().Value));
-            ViewData["SubCategories"] = new SelectList(subCategories, "Value", "Text");
+            ViewData["SubCategories"] = new SelectList(subCategories, "Value", "Text",Product.SubCategory??0);
 
 
 

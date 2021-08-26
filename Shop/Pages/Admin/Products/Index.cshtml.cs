@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Shop.Core.DTOs.Product;
+using Shop.Core.DTOs;
 using Shop.Core.Security;
 using Shop.Core.Services.Interfaces;
 
@@ -20,11 +20,11 @@ namespace Shop.Pages.Admin.Products
             _productService = productService;
         }
 
-        public List<ShowProductForAdminViewModel> ListProduct { get; set; }
+        public ShowProductForAdminViewModel ListProduct { get; set; }
 
-        public void OnGet()
+        public void OnGet(int pageId = 1, string filterProductName = "")
         {
-            ListProduct = _productService.GetProductsForAdmin();
+            ListProduct = _productService.GetProductsForAdmin(pageId,filterProductName);
         }
 
     }

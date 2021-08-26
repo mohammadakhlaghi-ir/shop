@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Shop.Core.DTOs.Product;
+using Shop.Core.DTOs;
 using Shop.DataLayer.Entities.Product;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace Shop.Core.Services.Interfaces
         #endregion
         #region Product
         Product GetProductById(int productId);
-        List<ShowProductForAdminViewModel> GetProductsForAdmin();
+        ShowProductForAdminViewModel GetProductsForAdmin(int pageId = 1, string filterProductName = "");
         
         int AddProduct(Product product, IFormFile imgProdcut);
         void UpdateProduct(Product product, IFormFile imgProdcut);

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Shop.Core.Convertors;
-using Shop.Core.DTOs.Product;
+using Shop.Core.DTOs;
 using Shop.Core.Generator;
 using Shop.Core.Security;
 using Shop.Core.Services.Interfaces;
@@ -75,15 +75,29 @@ namespace Shop.Core.Services
             return _context.Products.Find(productId);
         }
 
-        public List<ShowProductForAdminViewModel> GetProductsForAdmin()
+        public ShowProductForAdminViewModel GetProductsForAdmin(int pageId = 1, string filterProductName = "")
         {
-            return _context.Products.Select(p => new ShowProductForAdminViewModel()
+            IQueryable<Product> result = _context.Products;
+
+
+
+            if (!string.IsNullOrEmpty(filterProductName))
             {
-                ProductId = p.ProductId,
-                ImageName = p.ProductImageName,
-                Title = p.ProductTitle,
-                Price = p.ProductPrice
-            }).ToList();
+                result = result.Where(p => p.ProductTitle.Contains(filterProductName));
+            }
+
+            // Show Item In Page
+            int take = 5;
+            int skip = (pageId - 1) * take;
+
+
+            ShowProductForAdminViewModel list = new ShowProductForAdminViewModel();
+            list.CurrentPage = pageId;
+            list.PageCount = result.Count() / take;
+            list.Products = result.OrderBy(p => p.CreateDate).Skip(skip).Take(take).ToList();
+
+            return list;
+            
 
         }
 
@@ -139,8 +153,8 @@ namespace Shop.Core.Services
         }
         public void DeleteProduct(Product product)
         {
-            product.IsDelete = true;
-            _context.Products.Update(product);
+            _context.Products.Remove(_context.Products.Find(product.ProductId));
+
             _context.SaveChanges();
         }
 
