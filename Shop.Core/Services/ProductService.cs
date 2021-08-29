@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Shop.Core.Convertors;
 using Shop.Core.DTOs;
 using Shop.Core.Generator;
@@ -97,7 +98,7 @@ namespace Shop.Core.Services
             list.Products = result.OrderBy(p => p.CreateDate).Skip(skip).Take(take).ToList();
 
             return list;
-            
+
 
         }
 
@@ -158,5 +159,114 @@ namespace Shop.Core.Services
             _context.SaveChanges();
         }
 
+        public List<ProductFile> GetListProductFile(int productId)
+        {
+            return _context.ProductFiles.Where(p => p.ProductId == productId).ToList();
+        }
+
+        public bool CheckExistFile(string fileName)
+        {
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/productFiles", fileName);
+            return File.Exists(path);
+        }
+
+        public int AddProductFile(ProductFile file, IFormFile prodcutFile)
+        {
+            file.FileName = prodcutFile.FileName;
+
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/productFiles", file.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                prodcutFile.CopyTo(stream);
+            }
+
+            _context.ProductFiles.Add(file);
+            _context.SaveChanges();
+            return file.FileId;
+        }
+
+        public ProductFile GetProductFileById(int prodcutFileId)
+        {
+            return _context.ProductFiles.Find(prodcutFileId);
+        }
+
+        public void EditProductFile(ProductFile file, IFormFile prodcutFile)
+        {
+            if (prodcutFile != null)
+            {
+                string deleteFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/productFiles", file.FileName);
+                File.Delete(deleteFilePath);
+
+                file.FileName = prodcutFile.FileName;
+                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/productFiles", file.FileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    prodcutFile.CopyTo(stream);
+                }
+            }
+
+            _context.ProductFiles.Update(file);
+            _context.SaveChanges();
+
+        }
+
+        public void DeleteProductFile(ProductFile productFile)
+        {
+            _context.ProductFiles.Remove(_context.ProductFiles.Find(productFile.FileId));
+
+            _context.SaveChanges();
+        }
+
+        public List<ShowProductListItemViewModel> GetProduct(int pageId = 1, string filter = "",
+            string orderByType = "date", List<int> selectedCategories = null, int take = 0)
+        {
+            if (take == 0)
+                take = 5;
+
+            IQueryable<Product> result = _context.Products;
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                result = result.Where(p => p.ProductTitle.Contains(filter));
+            }
+
+
+            switch (orderByType)
+            {
+                case "date":
+                    {
+                        result = result.OrderByDescending(c => c.CreateDate);
+                        break;
+                    }
+
+            }
+
+
+
+
+            if (selectedCategories != null && selectedCategories.Any())
+            {
+                foreach (int categoryId in selectedCategories)
+                {
+                    result = result.Where(c => c.CategoryId == categoryId || c.SubCategory == categoryId);
+                }
+
+            }
+
+            int skip = (pageId - 1) * take;
+
+            return result.Select(p => new ShowProductListItemViewModel()
+            {
+                ProductId = p.ProductId,
+                ImageName = p.ProductImageName,
+                OldPrice = p.ProductPriceOld,
+                Price = p.ProductPrice,
+                Title = p.ProductTitle,
+
+            }).Skip(skip).Take(take).ToList();
+
+
+
+        }
     }
 }

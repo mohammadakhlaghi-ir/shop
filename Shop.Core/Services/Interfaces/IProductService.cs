@@ -25,7 +25,17 @@ namespace Shop.Core.Services.Interfaces
         int AddProduct(Product product, IFormFile imgProdcut);
         void UpdateProduct(Product product, IFormFile imgProdcut);
         void DeleteProduct(Product product);
+        List<ShowProductListItemViewModel> GetProduct(int pageId = 1, string filter = "", 
+            string orderByType = "date", List<int> selectedCategories = null, int take = 0);
 
+        #endregion
+        #region ProductFile
+        List<ProductFile> GetListProductFile(int productId);
+        bool CheckExistFile(string fileName);
+        void DeleteProductFile(ProductFile productFile);
+        int AddProductFile(ProductFile file, IFormFile prodcutFile);
+        ProductFile GetProductFileById(int prodcutFileId);
+        void EditProductFile(ProductFile file, IFormFile prodcutFile);
         #endregion
     }
 

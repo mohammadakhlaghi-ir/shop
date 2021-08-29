@@ -15,28 +15,30 @@ namespace Shop
     {
         private IUserService _userService;
         private IProductService _productService;
-        public HomeController(IUserService userService,IProductService productService)
+        public HomeController(IUserService userService, IProductService productService)
         {
             _userService = userService;
             _productService = productService;
         }
-        public IActionResult Index() {
-            ViewBag.keywords = "فروشگاه قالب و پلاگین محمد اخلاقی | محمد اخلاقی | ";
+        public IActionResult Index()
+        {
+            ViewBag.keywords = "فروشگاه قالب و پلاگین محمد اخلاقی | محمد اخلاقی  ";
             ViewBag.Descption = "فروشگاه قالب و پلاگین اختصاصی و غیر اختصاصی محمد اخلاقی برنامه نویس تحت بک اند و اپلیکیشن";
-            return View(); }
-        
+            return View(_productService.GetProduct());
+        }
+
         [Route("Error")]
         public IActionResult Error()
         {
-           
+
             return View();
         }
-        
+
         [Route("OnlinePayment/{id}")]
         public IActionResult onlinePayment(int id)
         {
-            if(HttpContext.Request.Query["Status"] !=""&&
-                HttpContext.Request.Query["Status"].ToString().ToLower() == "ok"&&
+            if (HttpContext.Request.Query["Status"] != "" &&
+                HttpContext.Request.Query["Status"].ToString().ToLower() == "ok" &&
                 HttpContext.Request.Query["Authority"] != "")
             {
                 string authority = HttpContext.Request.Query["Authority"];

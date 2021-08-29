@@ -62,9 +62,13 @@
                                             @item.ProductPrice
                                         </td>
                                         <td>
+                                            <a href="/Admin/Products/IndexProductFile/@item.ProductId" class="btn btn-default btn-sm">
+                                               فایل ها
+                                            </a>
                                             <a href="/Admin/Products/EditProduct/@item.ProductId" class="btn btn-warning btn-sm">
                                                 ویرایش
                                             </a>
+
                                             <a href="/Admin/Products/DeleteProduct/@item.ProductId" class="btn btn-danger btn-sm">
                                                 حذف
                                             </a>
@@ -78,7 +82,7 @@
                                 <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
                                     <ul class="pagination">
 
-                                        @for (int i = 1; i <= Model.ListProduct.PageCount +1; i++)
+                                        @for (int i = 1; i <= Model.ListProduct.PageCount + 1; i++)
                                         {
                                             <li class="paginate_button @((i==Model.ListProduct.CurrentPage)?"active":"")" aria-controls="dataTables-example" tabindex="0">
                                                 <a href="/Admin/Products?PageId=@i">@i</a>
