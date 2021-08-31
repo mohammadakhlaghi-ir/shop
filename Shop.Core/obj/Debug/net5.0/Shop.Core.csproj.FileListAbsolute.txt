@@ -16,11 +16,6 @@ E:\project\asp\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.dll
 E:\project\asp\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.pdb
 E:\project\asp\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.CopyComplete
 E:\project\asp\Shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.AssemblyReference.cache
-E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.AssemblyReference.cache
-E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.GeneratedMSBuildEditorConfig.editorconfig
-E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.AssemblyInfoInputs.cache
-E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.AssemblyInfo.cs
-E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.CoreCompileInputs.cache
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.Core.deps.json
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.Core.runtimeconfig.json
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.Core.runtimeconfig.dev.json
@@ -29,6 +24,11 @@ E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\ref\Shop.Core.dll
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.Core.pdb
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.pdb
+E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.AssemblyReference.cache
+E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.AssemblyInfoInputs.cache
+E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.AssemblyInfo.cs
+E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.CoreCompileInputs.cache
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.CopyComplete
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.dll
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\ref\Shop.Core.dll

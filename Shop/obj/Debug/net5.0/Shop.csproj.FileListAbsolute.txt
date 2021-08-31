@@ -159,14 +159,6 @@ E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\SuccessRegister.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\ActiveAccount.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 E:\project\asp\Shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\AccountNavbar.cshtml.g.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.csproj.AssemblyReference.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.GeneratedMSBuildEditorConfig.editorconfig
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.AssemblyInfoInputs.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.AssemblyInfo.cs
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.csproj.CoreCompileInputs.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.MvcApplicationPartsAssemblyInfo.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.RazorAssemblyInfo.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.RazorAssemblyInfo.cs
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\web.config
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\appsettings.Development.json
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\appsettings.json
@@ -293,7 +285,15 @@ E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.Core.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.Core.pdb
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.DataLayer.pdb
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.csproj.AssemblyReference.cache
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.AssemblyInfoInputs.cache
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.AssemblyInfo.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.csproj.CoreCompileInputs.cache
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.MvcApplicationPartsAssemblyInfo.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.MvcApplicationPartsAssemblyInfo.cache
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.RazorAssemblyInfo.cache
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.RazorAssemblyInfo.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\staticwebassets\Shop.StaticWebAssets.Manifest.cache
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\staticwebassets\Shop.StaticWebAssets.xml
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\scopedcss\bundle\Shop.styles.css
@@ -337,9 +337,11 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Account\SuccessRegist
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\onlinePayment.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\AccountNavbar.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\Components\ProductCategoryComponent\ProductCategory.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_ActiveEmail.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_BoxProduct.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_ForgotPassword.cshtml.g.cs
@@ -357,4 +359,3 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_BoxProduct.cshtml.g.cs

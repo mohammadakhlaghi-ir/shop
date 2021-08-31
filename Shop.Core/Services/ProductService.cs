@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Shop.Core.Convertors;
 using Shop.Core.DTOs;
 using Shop.Core.Generator;
@@ -217,7 +216,7 @@ namespace Shop.Core.Services
             _context.SaveChanges();
         }
 
-        public List<ShowProductListItemViewModel> GetProduct(int pageId = 1, string filter = "",
+        public Tuple<List<ShowProductListItemViewModel>, int> GetProduct(int pageId = 1, string filter = "",
             string orderByType = "date", List<int> selectedCategories = null, int take = 0)
         {
             if (take == 0)
@@ -231,11 +230,28 @@ namespace Shop.Core.Services
             }
 
 
+
+
             switch (orderByType)
             {
                 case "date":
                     {
                         result = result.OrderByDescending(c => c.CreateDate);
+                        break;
+                    }
+                case "maxPrice":
+                    {
+                        result = result.OrderByDescending(p => p.ProductPrice);
+                        break;
+                    }
+                case "minPrice":
+                    {
+                        result = result.OrderBy(p => p.ProductPrice);
+                        break;
+                    }
+                case "free":
+                    {
+                        result = result.Where(p => p.ProductPrice == 0);
                         break;
                     }
 
@@ -254,8 +270,18 @@ namespace Shop.Core.Services
             }
 
             int skip = (pageId - 1) * take;
+            int pageCount = result.Select(p => new ShowProductListItemViewModel()
+            {
+                ProductId = p.ProductId,
+                ImageName = p.ProductImageName,
+                OldPrice = p.ProductPriceOld,
+                Price = p.ProductPrice,
+                Title = p.ProductTitle,
 
-            return result.Select(p => new ShowProductListItemViewModel()
+
+            }).Count() / take;
+
+            var query = result.Select(p => new ShowProductListItemViewModel()
             {
                 ProductId = p.ProductId,
                 ImageName = p.ProductImageName,
@@ -265,8 +291,10 @@ namespace Shop.Core.Services
 
             }).Skip(skip).Take(take).ToList();
 
-
-
+            return Tuple.Create(query, pageCount);
         }
+
+
+
     }
 }

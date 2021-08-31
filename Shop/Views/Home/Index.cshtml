@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Shop.Core.DTOs.ShowProductListItemViewModel>
+﻿@model Tuple<List<Shop.Core.DTOs.ShowProductListItemViewModel>, int>
 @{
     ViewData["Title"] = "خانه";
 }
@@ -24,16 +24,16 @@
                     </ul>
                     <div id="tab-featured" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach (var item in Model)
+                            @foreach (var item in Model.Item1)
                             {
                                 <partial name="_BoxProduct" model="@item" />
                             }
                         </div>
                     </div>
 
-                    
-                    
-               
+
+
+
                 </div>    <!-- محصولات Tab Start -->
                 <!-- Banner Start -->
                 <div class="marketshop-banner">
@@ -43,9 +43,9 @@
                     </div>
                 </div>
                 <!-- Banner End -->
-               
-              
-             
+
+
+
             </div>
             <!--Middle Part End-->
         </div>
