@@ -216,11 +216,13 @@ namespace Shop.Core.Services
             _context.SaveChanges();
         }
 
+     
+
         public Tuple<List<ShowProductListItemViewModel>, int> GetProduct(int pageId = 1, string filter = "",
             string orderByType = "date", List<int> selectedCategories = null, int take = 0)
         {
             if (take == 0)
-                take = 5;
+                take = 4;
 
             IQueryable<Product> result = _context.Products;
 

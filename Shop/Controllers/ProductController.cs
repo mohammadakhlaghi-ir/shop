@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Shop.Core.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,6 @@ namespace Shop.Controllers
             ViewBag.pageId = pageId;
             return View(_productService.GetProduct(pageId, filter,  orderByType, selectedCategories, 8));
         }
-
     }
+
 }

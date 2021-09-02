@@ -7,6 +7,8 @@
 <div id="container">
     <form id="formFilter" method="get" action="/Product">
         <input type="hidden" id="pageid" name="pageId" value="@ViewBag.pageId.ToString()" />
+        
+
         <div class="container">
             <!-- Breadcrumb Start-->
             <ul class="breadcrumb">
@@ -18,40 +20,40 @@
                 <!--Left Part Start -->
                 <aside id="column-left" class="col-sm-3 hidden-xs">
                     <h3 class="subtitle">دسته ها</h3>
-                    <div class="box-category">
-                        @{
-                            List<ProductCategory> categories = ViewBag.Categories as List<ProductCategory>;
-                            List<int> selected = ViewBag.selectedCategories as List<int>;
-                        }
-                        <ul id="cat_accordion">
-                            @foreach (var category in categories.Where(p => p.ParentId == null))
-                            {
-                                <li>
-                                    <a href="/Product?selectedCategories=@category.CategoryId">
-                                        @category.CategoryTitle
-                                    </a>
-                                    <span class="down"></span>
-
-                                    @if (categories.Any(c => c.ParentId == category.CategoryId))
-                                    {
-                                        <ul>
-                                            @foreach (var sub in categories.Where(c => c.ParentId == category.CategoryId))
-                                            {
-                                                <li>
-                                                    <a href="/Product?selectedCategories=@sub.CategoryId">
-                                                        @sub.CategoryTitle
-
-                                                    </a>
-                                                </li>
-                                            }
-                                        </ul>
-                                    }
-
-                                </li>
+                    <section class="aside-section filter-by-category">
+                        <header>
+                            <h3> دسته بندی موضوعات </h3>
+                        </header>
+                        <div class="inner">
+                            @{
+                                List<ProductCategory> categories = ViewBag.Categories as List<ProductCategory>;
+                                List<int> selected = ViewBag.selectedCategories as List<int>;
                             }
-                        </ul>
+                            <ul>
+                                @foreach (var category in categories.Where(p => p.ParentId == null))
+                                {
+                                    <li>
+                                        <input onchange="changeCategory()" type="checkbox" @((selected.Any(s => s == category.CategoryId) ? "checked" : "")) name="selectedCategories" value="@category.CategoryId" id="cat-1">
+                                        <label for="cat-1"> @category.CategoryTitle </label>
+                                        @if (categories.Any(g => g.ParentId == category.CategoryId))
+                                        {
+                                            <ul>
+                                                @foreach (var sub in categories.Where(g => g.ParentId == category.CategoryId))
+                                                {
+                                                    <li>
+                                                        <input onchange="changeCategory()" @((selected.Any(s => s == sub.CategoryId) ? "checked" : "")) type="checkbox" name="selectedCategories" value="@sub.CategoryId" id="cat-1">
+                                                        <label for="cat-1"> @sub.CategoryTitle </label>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        }
 
-                    </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </section>
+             
 
                     <div class="banner owl-carousel">
                         <div class="item"> <a href="#"><img src="image/banner/small-banner1-265x350.jpg" alt="small banner" class="img-responsive" /></a> </div>
@@ -70,23 +72,24 @@
                             <div class="col-sm-8 text-right">
                                 <label class="control-label" for="input-sort">مرتب سازی :</label>
                             </div>
+
                             <div class="col-md-8 col-sm-6 text-right">
                                 <select name="orderByType"
-                                        id="selectEl"
+                                       
                                         class="form-control col-sm-3">
                                     <option value="">
                                         پیش فرض
                                     </option>
-                                    <option value="/Product?OrderByType=date">
+                                    <option value="date">
                                         تاریخ
                                     </option>
-                                    <option value="/Product?OrderByType=free">
+                                    <option value="free">
                                         رایگان
                                     </option>
-                                    <option value="/Product?OrderByType=maxPrice">
+                                    <option value="maxPrice">
                                         گرانترین
                                     </option>
-                                    <option value="/Product?OrderByType=minPrice">
+                                    <option value="minPrice">
                                         ارزان ترین
                                     </option>
                                 </select>
@@ -102,288 +105,26 @@
                     </div>
                     <br />
                     <div class="row products-category">
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/macbook_pro_1-220x330.jpg" alt=" کتاب آموزش باغبانی " title=" کتاب آموزش باغبانی " class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html"> کتاب آموزش باغبانی </a></h4>
-                                        <p class="description">
-                                            آخرین دستاورد های روز دنیا
-
-                                            شامل تمام اطلاعاتی که به آن نیاز خواهید داشت ...
-                                        </p>
-                                        <p class="price"> <span class="price-new">98000 تومان</span> <span class="price-old">120000 تومان</span> <span class="saving">-26%</span> <span class="price-tax">بدون مالیات : 90000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/nikon_d300_1-220x330.jpg" alt="دوربین دیجیتال حرفه ای" title="دوربین دیجیتال حرفه ای" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">دوربین دیجیتال حرفه ای</a></h4>
-                                        <p class="description"> طراحی حرفه ای با بهره گیری از آخرین تکنولوژی روز برای رسیدن به تجربه ای کاملا متفاوت در عکاسی حرفه ای ...</p>
-                                        <p class="price"> <span class="price-new">92000 تومان</span> <span class="price-old">98000 تومان</span> <span class="saving">-6%</span> <span class="price-tax">بدون مالیات : 75000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick="cart.add('31');"><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="دوربین فاین پیکس" title="دوربین فاین پیکس" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">دوربین فاین پیکس</a></h4>
-                                        <p class="description">
-                                            محصولات 8
-                                            ..
-                                        </p>
-                                        <p class="price"> 122000 تومان <span class="price-tax">بدون مالیات : 100000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/ipod_shuffle_1-220x330.jpg" alt="لپ تاپ hp پاویلیون" title="لپ تاپ hp پاویلیون" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">لپ تاپ hp پاویلیون</a></h4>
-                                        <p class="description">
-                                            بهترین انتخاب.
-                                            در میان سیستم های میان رده. مناسب برای کارهای روزمره..
-                                        </p>
-                                        <p class="price"> 122000 تومان <span class="price-tax">بدون مالیات : 100000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><span class="clearfix visible-lg-block"></span>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/palm_treo_pro_1-220x330.jpg" alt="موبایل HTC M7" title="موبایل HTC M7" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">موبایل HTC M7</a></h4>
-                                        <p class="description">تجربه ای جدید از به کار گیری دیوایس های موبایل در تمامی فعالیت های روزانه شما ...</p>
-                                        <p class="price"> 377000 تومان <span class="price-tax">بدون مالیات : 279000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/macbook_1-220x330.jpg" alt="آیدیا پد یوگا" title="آیدیا پد یوگا" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">آیدیا پد یوگا</a></h4>
-                                        <p class="description">
-                                            پردازشگر اینتل core i7
-
-                                            با به کار گیری پردازشگر قدرتمند اینتل با سرعت 2.1 گیگاهرتز ...
-                                        </p>
-                                        <p class="price"> 900000 تومان <span class="price-tax">بدون مالیات : 800000 تومان</span> </p>
-                                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/iphone_1-220x330.jpg" alt="آیفون 7" title="آیفون 7" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">آیفون 7</a></h4>
-                                        <p class="description">انقلابی در تمامی مدل های آیفون تا امروز با احساسی بی نظیر از به کار گیری ...</p>
-                                        <p class="price"> 2200000 تومان <span class="price-tax">بدون مالیات : 2 میلیون تومان</span> </p>
-                                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/macbook_air_1-220x330.jpg" alt="لپ تاپ ایلین ور" title="لپ تاپ ایلین ور" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">لپ تاپ ایلین ور</a></h4>
-                                        <p class="description">لپ تاپ های نام آشنای Alien Ware محصولی بی نظیر از کمپانی دل ...</p>
-                                        <p class="price"> <span class="price-new">10 میلیون تومان</span> <span class="price-old">12 میلیون تومان</span> <span class="saving">-5%</span> <span class="price-tax">بدون مالیات : 9 میلیون تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><span class="clearfix visible-lg-block"></span>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/ipod_nano_1-220x330.jpg" alt="پخش کننده موزیک" title="پخش کننده موزیک" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">پخش کننده موزیک</a></h4>
-                                        <p class="description">
-                                            پخش کننده همراه در جیب شما.
-
-                                            کوچک و سبک با کیفیت پخش بسیار بالا و امکانات متنوع برای استفاده ی همه روزه ...
-                                        </p>
-                                        <p class="price"> 122000 تومان <span class="price-tax">بدون مالیات : 100000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/ipod_classic_1-220x330.jpg" alt="آیپاد نسل 5" title="آیپاد نسل 5" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">آیپاد نسل 5</a></h4>
-                                        <p class="description">
-                                            و باز هم امکانات بیشتر.
-
-                                            عرضه شده در نسخه های 80 و 100 گیگابایتی در رنگ های متنوع...
-                                        </p>
-                                        <p class="price"> 122000 تومان <span class="price-tax">بدون مالیات : 100000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/ipod_touch_1-220x330.jpg" alt="سامسونگ گلکسی s7" title="سامسونگ گلکسی s7" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">سامسونگ گلکسی s7</a></h4>
-                                        <p class="description">
-                                            تکنولوژی تاچ بی نظیر و بی همتا.
-                                            با امکاناتی که شاید حتی تا امروز فکرشان را هم نمیکردید ...
-                                        </p>
-                                        <p class="price"> <span class="price-new">62000 تومان</span> <span class="price-old">122000 تومان</span> <span class="saving">-50%</span> <span class="price-tax">بدون مالیات : 50000 تومان</span> </p>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="image"><a href="product.html"><img src="image/product/samsung_tab_1-220x330.jpg" alt="تبلت ایسر" title="تبلت ایسر" class="img-responsive"></a></div>
-                                <div>
-                                    <div class="caption">
-                                        <h4><a href="product.html">تبلت ایسر</a></h4>
-                                        <p class="description">باریک ترین تبلت دنیا با عمر باطری بسیار بالا و کاربرد در انواع فعالیت های روزانه.</p>
-                                        <p class="price"> <span class="price-new">98000 تومان</span> <span class="price-old">240000 تومان</span> <span class="saving">-5%</span> <span class="price-tax">بدون مالیات : 80000 تومان</span> </p>
-                                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                                    </div>
-                                    <div class="button-group">
-                                        <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
-                                        <div class="add-to-links">
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                            <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><span class="clearfix visible-lg-block"></span>
-                    </div>
-                    <div class="row products-category">
-                        <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <div class="product-thumb">
-                                <div class="row">
-                                    @foreach (var item in Model.Item1)
-                                    {
-                                        <partial name="_BoxProduct" model="@item" />
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 text-left">
-                            @if (Model.Item2 > 1)
+                        <div>
+                            @foreach (var item in Model.Item1)
                             {
-                                <ul class="pagination" aria-label="Page navigation">
-                                    @for (int i = 1; i <= (int)Model.Item2; i++)
-                                    {
-                                        <li class="active"><a onclick="changePage(@i)" href="#">@i</a></li>
-                                    }
-                                </ul>
+                                <partial name="_BoxProductCategory" model="@item" />
                             }
                         </div>
                     </div>
+                    @if (Model.Item2 > 1)
+                    {
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+
+                                @for (int i = 1; i <= (int)Model.Item2; i++)
+                                {
+                                    <li class="page-item"><a class="page-link" onclick="changePage(@i)" href="#">@i</a></li>
+
+                                }
+                            </ul>
+                        </nav>
+                    }
                     <!--Middle Part End -->
                 </div>
             </div>
@@ -396,14 +137,77 @@
     <script src="/css/noUiSlider/nouislider.min.js"></script>
     <script src="/js/script.js"></script>
     <script type="text/javascript">
+
         function changePage(pageid) {
             $("#pageid").val(pageid);
+           
+
             $("#formFilter").submit();
         }
 
-    </script>
-    <script>
-        // get your select element and listen for a change event on it
+        $(function () {
+
+            var slider = document.getElementById('priceFilter');
+            noUiSlider.create(slider, {
+                start: [20000, 100000],
+                step: 5000,
+                connect: true,
+                direction: 'rtl',
+                range: {
+                    'min': 20000,
+                    'max': 100000
+                }
+            });
+
+            var marginMin = document.getElementById('min-text'),
+                marginMax = document.getElementById('max-text');
+
+            slider.noUiSlider.on('update', function (values, handle) {
+                var xvalue = Math.round(values[handle]);
+                if (handle) {
+                    marginMax.innerHTML = xvalue;
+                } else {
+                    marginMin.innerHTML = xvalue;
+                }
+                //console.log(values[handle]);
+            });
+
+            slider.noUiSlider.on('change', function (values, handle) {
+                var xvalue = Math.round(values[handle]);
+                if (handle) {
+                    // setGetParameter('max_price', xvalue);
+                    $('#max-value').val(xvalue);
+                } else {
+                    // setGetParameter('min_price', xvalue);
+                    $('#min-value').val(xvalue);
+                }
+            });
+
+
+            slider.noUiSlider.on('slide', function (values, handle) {
+
+                console.log(values[0]);
+                console.log(values[1]);
+
+                var xvalue = Math.round(values[handle]);
+                //updateSliderRange( Math.round(values[0]), Math.round(values[1]) );
+            });
+
+
+
+            function updateSliderRange(min, max) {
+                slider.noUiSlider.updateOptions({
+                    range: {
+                        'min': min,
+                        'max': max
+                    }
+                });
+            }
+        });
+
+        function changeCategory() {
+            $("#formFilter").submit();
+        }
         $('#selectEl').change(function () {
             // set the window's location property to the value of the option the user has selected
             window.location = $(this).val();
@@ -411,7 +215,9 @@
 
 
         });
+      
     </script>
+  
 
 
 }
