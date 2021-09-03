@@ -5,7 +5,8 @@
 
 @{
     ViewData["Title"] = "نمایش فاکتور";
-    int sumOrder = Model.OrderDetails.Sum(od => od.Price * od.Count);
+
+    int sumOrder = Model.OrderDetails.Sum(od => od.Price);
 }
 
 <div id="container">
@@ -35,6 +36,7 @@
 
                                 <th>قیمت</th>
                                 <th>جمع</th>
+                                <th>عملیات</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,6 +50,13 @@
                                     <td>@item.Price</td>
                                     <td>
                                         @( item.Price.ToString("#,0")) تومان
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-controller="MyOrders" asp-route-id="@item.DetailId">
+                                            حذف
+                                        </a>
+                                      
+
                                     </td>
                                 </tr>
                             }

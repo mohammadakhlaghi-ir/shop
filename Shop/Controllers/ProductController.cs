@@ -47,7 +47,7 @@ namespace Shop.Controllers
         public ActionResult BuyProduct(int id)
         {
             int orderId = _orderService.AddOrder(User.Identity.Name, id);
-            return Redirect("/UserPanel/MyOrders/" + orderId);
+            return Redirect("/UserPanel/MyOrders/ShowOrder/" + orderId);
         }
 
     }

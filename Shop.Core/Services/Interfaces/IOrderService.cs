@@ -13,7 +13,7 @@ namespace Shop.Core.Services.Interfaces
 
         void UpdatePriceOrder(int orderId);
         Order GetOrderForUserPanel(string userName, int orderId);
-
+        
         bool FinalyOrder(string userName, int orderId);
     }
 }

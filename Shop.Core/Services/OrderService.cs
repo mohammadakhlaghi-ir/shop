@@ -57,7 +57,7 @@ namespace Shop.Core.Services
                     .FirstOrDefault(d => d.OrderId == order.OrderId && d.ProductId == productId);
                 if (detail != null)
                 {
-                    detail.Count += 1;
+                    //detail.Count += 1;
                     _context.OrderDetails.Update(detail);
                 }
                 else
@@ -137,6 +137,9 @@ namespace Shop.Core.Services
 
             return false;
         }
+
+        
+      
     }
 
 }

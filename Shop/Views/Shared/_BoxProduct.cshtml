@@ -6,11 +6,14 @@
             <h4><a href="/product/ShowProduct/@Model.ProductId">@Model.Title</a></h4>
             <p class="price"><span class="price-new">@((Model.Price==0)?"رایگان":Model.Price.ToString("#,0") + "تومان") </span> <span class="price-old">@((Model.Price==0)?null:Model.OldPrice.ToString("#,0") + "تومان")</span></p>
         </div>
-        <div class="button-group">
-            <button class="btn-primary" type="button" onClick="cart.add('42');"><span>افزودن به سبد</span></button>
-            <div class="add-to-links">
-            </div>
-        </div>
+        @if (Model.Price != 0)
+        {<div class="cart">
+                <div>
+
+                    <a href="/product/BuyProduct/@Model.ProductId" class="btn btn-primary"> افزودن به سبد</a>
+                </div>
+
+            </div>}
 
     </div>
 </div>

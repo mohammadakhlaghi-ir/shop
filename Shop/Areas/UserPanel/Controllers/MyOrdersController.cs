@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Core.Services.Interfaces;
+using Shop.DataLayer.Context;
+using Shop.DataLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +15,12 @@ namespace Shop.Areas.UserPanel.Controllers
     public class MyOrdersController : Controller
     {
         private IOrderService _orderService;
+        private ShopContext _context;
 
-        public MyOrdersController(IOrderService orderService)
+        public MyOrdersController(IOrderService orderService,ShopContext context)
         {
             _orderService = orderService;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -30,7 +34,7 @@ namespace Shop.Areas.UserPanel.Controllers
 
             if (order == null)
             {
-                return NotFound();
+                return Redirect("Error");
             }
 
             ViewBag.finaly = finaly;
@@ -46,6 +50,16 @@ namespace Shop.Areas.UserPanel.Controllers
 
             return BadRequest();
         }
+        
+        public IActionResult Delete(int id)
+        {
+           
+            var orderDetail = _context.OrderDetails.Find(id);
+            _context.Remove(orderDetail);
+            _context.SaveChanges();
+            return Redirect("/UserPanel/MyOrders/Showorder" + orderDetail.OrderId);
+        }
+
     }
 
 }
