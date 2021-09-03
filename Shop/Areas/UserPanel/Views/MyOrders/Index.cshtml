@@ -1,0 +1,105 @@
+﻿@using Shop.Core.Services.Interfaces
+@model Shop.DataLayer.Entities.Order
+
+@inject IUserService _UserService
+
+@{
+    ViewData["Title"] = "نمایش فاکتور";
+    int sumOrder = Model.OrderDetails.Sum(od => od.Price * od.Count);
+}
+
+<div id="container">
+    <div class="container">
+        <!-- Breadcrumb Start-->
+        <ul class="breadcrumb">
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+            <li><a href="/MyOrders">نمایش فاکتور</a></li>
+
+        </ul>
+        <!-- Breadcrumb End-->
+        <div class="row">
+            <!--Middle Part Start-->
+            <div class="col-md-9 col-sm-8 col-xs-12">
+                <section class="user-account-content">
+                    <header><h1> فاکتور شما </h1></header>
+                    @if (ViewBag.finaly == true)
+                    {
+                        <div class="alert alert-success">
+                            فاکتور با موفقیت پرداخت گردید
+                        </div>
+                    }
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>محصول</th>
+
+                                <th>قیمت</th>
+                                <th>جمع</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderDetails)
+                            {
+                                <tr>
+                                    <td>
+                                        <a href="/product/ShowCourse/@item.Product" target="_blank">@item.Product.ProductTitle</a>
+                                    </td>
+
+                                    <td>@item.Price</td>
+                                    <td>
+                                        @( item.Price.ToString("#,0")) تومان
+                                    </td>
+                                </tr>
+                            }
+                            @if (!Model.IsFinaly)
+                            {
+                                <tr>
+                                    <td colspan="3" class="text-left">کد تخفیف</td>
+                                    <td>
+                                        <input type="text" class="form-control" />
+                                        <input type="submit" class="btn btn-primary btn-block" style="margin-top: 5px" value="اعمال" />
+                                    </td>
+                                </tr>
+                            }
+                            <tr>
+                                <td colspan="3" class="text-left">جمع کل</td>
+                                <td>
+                                    @sumOrder
+                                </td>
+                            </tr>
+                            @if (!Model.IsFinaly)
+                            {
+                                <tr>
+                                    <td colspan="2" class="text-left"></td>
+                                    <td colspan="2">
+                                        @if (_UserService.BalanceUserWallet(User.Identity.Name) >= @Model.OrderSum)
+                                        {
+                                            <a class="btn btn-success btn-block" href="/UserPanel/MyOrders/FinalyOrder/@Model.OrderId">تایید فاکتور</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-success btn-block" disabled>تایید فاکتور</a>
+                                            <div class="alert alert-danger">
+                                                موجودی کیف پول شما کافی نمی باشد ، لطفا از طریق این
+                                                <a href="/UserPanel/Wallet" class="alert-link">لینک</a>
+                                                اقدام به شارژ حساب کنید
+                                            </div>
+                                        }
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <!--Middle Part End -->
+            <!--Right Part Start -->
+            <partial name="_SideBar" />
+
+
+
+            <!--Right Part End -->
+        </div>
+    </div>
+</div>

@@ -90,7 +90,7 @@ namespace Shop.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public ActionResult Login(LoginViewModel login)
+        public ActionResult Login(LoginViewModel login, string ReturnUrl = "/")
         {
             if (!ModelState.IsValid)
             {
@@ -117,6 +117,11 @@ namespace Shop.Controllers
                     HttpContext.SignInAsync(principal, properties);
 
                     ViewBag.IsSuccess = true;
+                    if (ReturnUrl != "/")
+                    {
+                        return Redirect(ReturnUrl);
+                    }
+
                     return View();
                 }
                 else

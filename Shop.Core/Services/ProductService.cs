@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Shop.Core.Convertors;
 using Shop.Core.DTOs;
 using Shop.Core.Generator;
@@ -296,7 +297,11 @@ namespace Shop.Core.Services
             return Tuple.Create(query, pageCount);
         }
 
+        public Product GetProductForShow(int productId)
+        {
+            return _context.Products.Include(p => p.ProductFile)
+               .FirstOrDefault(p => p.ProductId == productId);
 
-
+        }
     }
 }

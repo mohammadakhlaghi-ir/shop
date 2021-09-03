@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Shop.Core.DTOs;
 using Shop.Core.Services.Interfaces;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,7 +28,8 @@ namespace Shop
             ViewBag.Descption = "فروشگاه قالب و پلاگین اختصاصی و غیر اختصاصی محمد اخلاقی برنامه نویس تحت بک اند و اپلیکیشن";
             return View(_productService.GetProduct());
         }
-
+       
+      
         [Route("Error")]
         public IActionResult Error()
         {

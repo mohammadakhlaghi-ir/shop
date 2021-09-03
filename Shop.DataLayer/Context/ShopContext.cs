@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shop.DataLayer.Entities;
 using Shop.DataLayer.Entities.Permission;
 using Shop.DataLayer.Entities.Product;
 using Shop.DataLayer.Entities.User;
@@ -41,7 +42,13 @@ namespace Shop.DataLayer.Context
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductFile> ProductFiles { get; set; }
+        public DbSet<UserProduct> UserProducts { get; set; }
 
+        #endregion
+        #region Order
+
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)

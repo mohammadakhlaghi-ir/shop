@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[5.2.0-preview1-r131, )"
             },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.6, )"
@@ -70,6 +74,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.15.0, )"
             }
           },
           "imports": [

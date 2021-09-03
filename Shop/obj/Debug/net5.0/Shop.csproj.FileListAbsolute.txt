@@ -173,6 +173,7 @@ E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.Views.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Shop.Views.pdb
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\CoreCompat.System.Drawing.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Humanizer.dll
+E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\MailKit.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -203,7 +204,9 @@ E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGe
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\MimeKit.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\System.Composition.AttributedModel.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\System.Composition.Convention.dll
 E:\project\asp\shop\shop\Shop\bin\Debug\net5.0\System.Composition.Hosting.dll
@@ -338,10 +341,12 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.c
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Home\onlinePayment.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Product\ShowProduct.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\AccountNavbar.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\Components\ProductCategoryComponent\ProductCategory.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_ActiveEmail.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_BoxProduct.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_BoxProductCategory.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_ForgotPassword.cshtml.g.cs
@@ -359,4 +364,4 @@ E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
-E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Views\Shared\_BoxProductCategory.cshtml.g.cs
+E:\project\asp\shop\shop\Shop\obj\Debug\net5.0\Razor\Areas\UserPanel\Views\MyOrders\Index.cshtml.g.cs

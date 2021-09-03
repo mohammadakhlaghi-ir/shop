@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Core.Services.Interfaces;
 using System;
@@ -10,11 +11,16 @@ namespace Shop.Controllers
 {
     public class ProductController : Controller
     {
+        
+        private IOrderService _orderService;
+
+      
         private IProductService _productService;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, IOrderService orderService)
         {
             _productService = productService;
+            _orderService = orderService;
         }
 
         public IActionResult Index(int pageId = 1, string filter = ""
@@ -24,8 +30,26 @@ namespace Shop.Controllers
             ViewBag.selectedCategories = selectedCategories;
             ViewBag.Categories = _productService.GetAllCategory();
             ViewBag.pageId = pageId;
-            return View(_productService.GetProduct(pageId, filter,  orderByType, selectedCategories, 8));
+            return View(_productService.GetProduct(pageId, filter,  orderByType, selectedCategories, 40));
         }
+        [Route("Product/ShowProduct/{id}")]
+        public IActionResult ShowProduct(int id)
+        {
+            var product = _productService.GetProductForShow(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
+        [Authorize]
+        public ActionResult BuyProduct(int id)
+        {
+            int orderId = _orderService.AddOrder(User.Identity.Name, id);
+            return Redirect("/UserPanel/MyOrders/" + orderId);
+        }
+
     }
 
 }

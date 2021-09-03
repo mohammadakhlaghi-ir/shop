@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shop.DataLayer.Entities.Product;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -40,6 +41,8 @@ namespace Shop.DataLayer.Entities.User
 
         public virtual List<UserRole> UserRoles { get; set; }
         public virtual List<Wallet.Wallet> Wallets { get; set; }
+        public virtual List<Order> Orders { get; set; }
+        public List<UserProduct> UserProducts { get; set; }
         #endregion
     }
 }

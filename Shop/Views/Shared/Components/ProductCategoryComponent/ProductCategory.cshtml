@@ -8,14 +8,14 @@
                 @foreach (var category in Model.Where(c => c.ParentId == null))
                 {
             <li class="dropdown">
-                <a href=""> @category.CategoryTitle </a>
+                <a href="/Product?selectedCategories=@category.CategoryId"> @category.CategoryTitle </a>
                 @if (Model.Any(c => c.ParentId == category.CategoryId))
                 {
             <div class="dropdown-menu">
                 <ul>
                     @foreach (var sub in Model.Where(c => c.ParentId == category.CategoryId))
                     {
-                        <li><a href=""> @sub.CategoryTitle </a></li>
+                        <li><a href="/Product?selectedCategories=@sub.CategoryId"> @sub.CategoryTitle </a></li>
                     }
                 </ul>
             </div>
@@ -23,12 +23,12 @@
                 </li>
                 }
                 <li><a class="home_link" title="خانه" href="https://mohammadakhlaghi.ir/">خدمات</a></li>
-                <li><a class="home_link" title="خانه" href="/contact">تماس با ما</a></li>
-                <li><a class="home_link" title="خانه" href="/about">درباره ما</a></li>
+                <li><a class="home_link" title="خانه" href="https://mohammadakhlaghi.ir/contact/">تماس با ما</a></li>
+                <li><a class="home_link" title="خانه" href="https://mohammadakhlaghi.ir/%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87-%d9%85%d9%86/">درباره ما</a></li>
 
 
 
-                <li class="custom-link-right"><a href="#" target="_blank"> همین حالا بخرید!</a></li>
+                <li class="custom-link-right"><a href="/product" target="_blank"> همین حالا بخرید!</a></li>
             </ul>
         </div>
     </div>

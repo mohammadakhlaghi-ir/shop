@@ -19,6 +19,60 @@ namespace Shop.DataLayer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Order", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsFinaly")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("OrderSum")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Shop.DataLayer.Entities.OrderDetail", b =>
+                {
+                    b.Property<int>("DetailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DetailId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.Permission.Permission", b =>
                 {
                     b.Property<int>("PermissionId")
@@ -167,6 +221,28 @@ namespace Shop.DataLayer.Migrations
                     b.ToTable("ProductFiles");
                 });
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Product.UserProduct", b =>
+                {
+                    b.Property<int>("UP_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UP_Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserProducts");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.User.Role", b =>
                 {
                     b.Property<int>("RoleId")
@@ -302,6 +378,36 @@ namespace Shop.DataLayer.Migrations
                     b.ToTable("WalletTypes");
                 });
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Order", b =>
+                {
+                    b.HasOne("Shop.DataLayer.Entities.User.User", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Shop.DataLayer.Entities.OrderDetail", b =>
+                {
+                    b.HasOne("Shop.DataLayer.Entities.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shop.DataLayer.Entities.Product.Product", "Product")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.Permission.Permission", b =>
                 {
                     b.HasOne("Shop.DataLayer.Entities.Permission.Permission", null)
@@ -363,6 +469,25 @@ namespace Shop.DataLayer.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Product.UserProduct", b =>
+                {
+                    b.HasOne("Shop.DataLayer.Entities.Product.Product", "Product")
+                        .WithMany("UserProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shop.DataLayer.Entities.User.User", "User")
+                        .WithMany("UserProducts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.User.UserRole", b =>
                 {
                     b.HasOne("Shop.DataLayer.Entities.User.Role", "Role")
@@ -399,6 +524,11 @@ namespace Shop.DataLayer.Migrations
                     b.Navigation("walletType");
                 });
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.Permission.Permission", b =>
                 {
                     b.Navigation("Permissions");
@@ -408,7 +538,11 @@ namespace Shop.DataLayer.Migrations
 
             modelBuilder.Entity("Shop.DataLayer.Entities.Product.Product", b =>
                 {
+                    b.Navigation("OrderDetails");
+
                     b.Navigation("ProductFile");
+
+                    b.Navigation("UserProducts");
                 });
 
             modelBuilder.Entity("Shop.DataLayer.Entities.Product.ProductCategory", b =>
@@ -427,6 +561,10 @@ namespace Shop.DataLayer.Migrations
 
             modelBuilder.Entity("Shop.DataLayer.Entities.User.User", b =>
                 {
+                    b.Navigation("Orders");
+
+                    b.Navigation("UserProducts");
+
                     b.Navigation("UserRoles");
 
                     b.Navigation("Wallets");

@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Shop.Core.Convertors;
 using Microsoft.AspNetCore.Identity;
 
+
 namespace Shop
 {
     public class Startup
@@ -44,6 +45,7 @@ namespace Shop
             );
 
             #endregion
+           
             #region Authentication
             services.AddAuthentication(options =>
             {
@@ -64,6 +66,7 @@ namespace Shop
             services.AddTransient<IViewRenderService, RenderViewToString>();
             services.AddTransient<IPermissionService, PermissionService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IOrderService, OrderService>();
             #endregion
         }
 

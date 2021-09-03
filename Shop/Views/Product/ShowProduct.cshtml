@@ -1,0 +1,175 @@
+﻿@model Shop.DataLayer.Entities.Product.Product
+@{
+    ViewData["Title"] = Model.ProductTitle;
+}
+
+<div id="container">
+    <div class="container">
+        <!-- Breadcrumb Start-->
+        <ul class="breadcrumb">
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/product/" itemprop="url"><span itemprop="title">محصولات</span></a></li>
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/product/ShowProduct/@Model.ProductId" itemprop="url"><span itemprop="title">@Model.ProductTitle</span></a></li>
+        </ul>
+        <!-- Breadcrumb End-->
+        <div class="row">
+            <!--Middle Part Start-->
+            <div id="content" class="col-sm-9">
+                <div itemscope>
+                    <h1 class="title" itemprop="name">@Model.ProductTitle</h1>
+                    <div class="row product-info">
+                        <div class="col-sm-6">
+                            <div class="image"><img class="img-responsive" itemprop="image" id="zoom_01" src="/product/image/@Model.ProductImageName" title="@Model.ProductTitle" alt="@Model.ProductTitle" data-zoom-image="/product/image/@Model.ProductImageName" /> </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled description">
+                                <li><b>تعداد فایل ها  :</b> <span itemprop="brand">@Model.ProductFile.Count</span></li>
+
+                            </ul>
+                            @if (Model.ProductPrice != 0)
+                            {<ul class="price-box">
+                                    <li class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span class="price-old">@Model.ProductPriceOld.ToString("#,0") تومان</span>
+                                     <span itemprop="price">@Model.ProductPrice.ToString("#,0") تومان<span itemprop="availability" content="موجود"></span></span></li>
+                                    <li></li>
+                                </ul>}
+                            @if (Model.ProductPrice == 0)
+                            {
+                                <ul class="price-box">
+                                    <li class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                        <span itemprop="price">رایگان<span itemprop="availability" content="موجود"></span></span>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            }
+                            <div id="product">
+
+                                @if (Model.ProductPrice != 0)
+                                {<div class="cart">
+                                        <div>
+
+                                            <button href="/product/Buyproduct/@Model.ProductId" type="button" id="button-cart" class="btn btn-primary btn-lg">افزودن به سبد</button>
+                                        </div>
+
+                                    </div>}
+
+                            </div>
+
+                            <hr>
+                            <!-- AddThis Button BEGIN -->
+
+
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-514863386b357649"></script>
+                            <!-- AddThis Button END -->
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-description" data-toggle="tab">توضیحات</a></li>
+                        <li><a href="#tab-review" data-toggle="tab">دیدگاه ها</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div itemprop="description" id="tab-description" class="tab-pane active">
+                            <div>
+                                @Html.Raw(Model.ProductDescription)
+                            </div>
+                        </div>
+
+                        <div id="tab-review" class="tab-pane">
+                            <form class="form-horizontal">
+                                <div id="review">
+                                    <div>
+                                        <table class="table table-striped table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 50%;"><strong><span>هاروی</span></strong></td>
+                                                    <td class="text-right"><span>1395/1/20</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <p>ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                                                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-striped table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 50%;"><strong><span>اندرسون</span></strong></td>
+                                                    <td class="text-right"><span>1395/1/20</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <p>ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                                                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="text-right"></div>
+                                </div>
+                                <h2>یک بررسی بنویسید</h2>
+                                <div class="form-group required">
+                                    <div class="col-sm-12">
+                                        <label for="input-name" class="control-label">نام شما</label>
+                                        <input type="text" class="form-control" id="input-name" value="" name="name">
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <div class="col-sm-12">
+                                        <label for="input-review" class="control-label">بررسی شما</label>
+                                        <textarea class="form-control" id="input-review" rows="5" name="text"></textarea>
+                                        <div class="help-block"><span class="text-danger">توجه :</span> HTML بازگردانی نخواهد شد!</div>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <div class="col-sm-12">
+                                        <label class="control-label">رتبه</label>
+                                        &nbsp;&nbsp;&nbsp; بد&nbsp;
+                                        <input type="radio" value="1" name="rating">
+                                        &nbsp;
+                                        <input type="radio" value="2" name="rating">
+                                        &nbsp;
+                                        <input type="radio" value="3" name="rating">
+                                        &nbsp;
+                                        <input type="radio" value="4" name="rating">
+                                        &nbsp;
+                                        <input type="radio" value="5" name="rating">
+                                        &nbsp;خوب
+                                    </div>
+                                </div>
+                                <div class="buttons">
+                                    <div class="pull-right">
+                                        <button class="btn btn-primary" id="button-review" type="button">ادامه</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <h3 class="subtitle">محصولات مرتبط</h3>
+                    <div class="owl-carousel related_pro">
+                        @*@foreach (var item in Model.ProductCategory)
+                            {
+                                <partial name="_BoxProduct" model="@item" />
+                            }*@
+                    </div>
+                </div>
+            </div>
+            <!--Middle Part End -->
+            <!--Right Part Start -->
+            <aside id="column-right" class="col-sm-3 hidden-xs">
+
+
+                <div class="list-group">
+                    <h3 class="subtitle">فروشگاه محمد اخلاقی</h3>
+                    <p>فروشگاه محمد اخلاقی با ارزان ترین و مناسبت ترین پلاگین ها، قالب ها و... </p>
+                    <p> در متنوع ترین محصولات کار خود را آغاز کرده است.</p>
+                    <p>شما می توانید جهت هرگونه پشتیبانی و هر مورد دیگر، به تماس با ما وب سایت مراجعه کنید.</p>
+                </div>
+
+            </aside>
+            <!--Right Part End -->
+        </div>
+    </div>
+</div>
+
