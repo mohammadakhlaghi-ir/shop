@@ -37,6 +37,12 @@ namespace Shop.Core.Services.Interfaces
         ProductFile GetProductFileById(int prodcutFileId);
         void EditProductFile(ProductFile file, IFormFile prodcutFile);
         #endregion
+        #region Comments
+
+        void AddComment(ProductComment comment);
+        Tuple<List<ProductComment>, int> GetProductComment(int productId, int pageId = 1);
+
+        #endregion
     }
 
 }

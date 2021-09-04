@@ -57,6 +57,7 @@ namespace Shop.DataLayer.Entities.Product
         public List<ProductFile> ProductFile { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
         public List<UserProduct> UserProducts { get; set; }
+        public List<ProductComment> ProductComments { get; set; }
         #endregion
     }
 

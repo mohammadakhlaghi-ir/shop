@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shop.Core.DTOs.Order;
 using Shop.Core.Services.Interfaces;
 using Shop.DataLayer.Context;
-using Shop.DataLayer.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Shop.Areas.UserPanel.Controllers
 {
@@ -17,7 +13,7 @@ namespace Shop.Areas.UserPanel.Controllers
         private IOrderService _orderService;
         private ShopContext _context;
 
-        public MyOrdersController(IOrderService orderService,ShopContext context)
+        public MyOrdersController(IOrderService orderService, ShopContext context)
         {
             _orderService = orderService;
             _context = context;
@@ -25,22 +21,22 @@ namespace Shop.Areas.UserPanel.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_orderService.GetUserOrders(User.Identity.Name));
         }
 
-        public IActionResult ShowOrder(int id, bool finaly = false)
+        public IActionResult ShowOrder(int id, bool finaly = false, string type = "")
         {
             var order = _orderService.GetOrderForUserPanel(User.Identity.Name, id);
 
             if (order == null)
             {
-                return Redirect("/404");
+                return Redirect("/UserPanel/MyOrders");
             }
-
+            ViewBag.typeDiscount = type;
             ViewBag.finaly = finaly;
             return View(order);
         }
-        
+
         public IActionResult FinalyOrder(int id)
         {
             if (_orderService.FinalyOrder(User.Identity.Name, id))
@@ -50,14 +46,20 @@ namespace Shop.Areas.UserPanel.Controllers
 
             return BadRequest();
         }
-        
-        
+
+
         public IActionResult Delete(int id)
         {
             var orderDetail = _context.OrderDetails.Find(id);
             _context.Remove(orderDetail);
             _context.SaveChanges();
-            return Redirect("/UserPanel/MyOrders/ShowOrder/"+orderDetail.OrderId);
+            _orderService.UpdatePriceOrder(orderDetail.OrderId);
+            return Redirect("/UserPanel/MyOrders/ShowOrder/" + orderDetail.OrderId);
+        }
+        public IActionResult UseDiscount(int orderId, string code)
+        {
+            DiscountUseType type = _orderService.UseDiscount(orderId, code);
+            return Redirect("/UserPanel/MyOrders/ShowOrder/" + orderId + "?type=" + type.ToString());
         }
 
     }

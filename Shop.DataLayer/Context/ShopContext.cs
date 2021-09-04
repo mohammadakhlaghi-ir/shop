@@ -24,7 +24,7 @@ namespace Shop.DataLayer.Context
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
-
+        public DbSet<UserDiscountCode> UserDiscountCodes { get; set; }
 
         #endregion
         #region Wallet
@@ -43,12 +43,13 @@ namespace Shop.DataLayer.Context
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductFile> ProductFiles { get; set; }
         public DbSet<UserProduct> UserProducts { get; set; }
-
+        public DbSet<ProductComment> ProductComments { get; set; }
         #endregion
         #region Order
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
 
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)

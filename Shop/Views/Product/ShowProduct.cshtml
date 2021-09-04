@@ -1,6 +1,14 @@
 ﻿@model Shop.DataLayer.Entities.Product.Product
+@using Shop.Core.Services.Interfaces
+@inject IOrderService _OrderService;
 @{
     ViewData["Title"] = Model.ProductTitle;
+    bool IsUserInProduct = false;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        IsUserInProduct = _OrderService.IsUserInProduct(User.Identity.Name, Model.ProductId);
+    }
 }
 
 <div id="container">
@@ -26,10 +34,16 @@
                                 <li><b>تعداد فایل ها  :</b> <span itemprop="brand">@Model.ProductFile.Count</span></li>
 
                             </ul>
+                            <ul class="list-unstyled description">
+                                <li><b>تعداد خرید  :</b> <span itemprop="brand">@Model.UserProducts.Count</span></li>
+
+                            </ul>
                             @if (Model.ProductPrice != 0)
                             {<ul class="price-box">
-                                    <li class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span class="price-old">@Model.ProductPriceOld.ToString("#,0") تومان</span>
-                                     <span itemprop="price">@Model.ProductPrice.ToString("#,0") تومان<span itemprop="availability" content="موجود"></span></span></li>
+                                    <li class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                        <span class="price-old">@Model.ProductPriceOld.ToString("#,0") تومان</span>
+                                        <span itemprop="price">@Model.ProductPrice.ToString("#,0") تومان<span itemprop="availability" content="موجود"></span></span>
+                                    </li>
                                     <li></li>
                                 </ul>}
                             @if (Model.ProductPrice == 0)
@@ -41,17 +55,23 @@
                                     <li></li>
                                 </ul>
                             }
+
                             <div id="product">
 
-                                @if (Model.ProductPrice != 0)
+                                @if (Model.ProductPrice != 0 && !IsUserInProduct)
                                 {<div class="cart">
                                         <div>
 
-                                            <a  href="/product/BuyProduct/@Model.ProductId"   class="btn btn-primary"> افزودن به سبد</a>
+                                            <a href="/product/BuyProduct/@Model.ProductId" class="btn btn-primary"> افزودن به سبد</a>
                                         </div>
 
                                     </div>}
-
+                                @if (!IsUserInProduct)
+                                {
+                                    <div class="alert alert-info">
+                                        <p>بعد از تایید فاکتور و پرداخت آن، لینک های دانلود برای شما فعال خواهد شد</p>
+                                    </div>
+                                }
                             </div>
 
                             <hr>
@@ -64,7 +84,8 @@
                     </div>
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab-description" data-toggle="tab">توضیحات</a></li>
-                        <li><a href="#tab-review" data-toggle="tab">دیدگاه ها</a></li>
+                        <li><a href="#tab-specification" data-toggle="tab">فایل ها</a></li>
+                        <li><a href="#tab-review" data-toggle="tab">دیدگاه ها </a></li>
                     </ul>
                     <div class="tab-content">
                         <div itemprop="description" id="tab-description" class="tab-pane active">
@@ -72,78 +93,76 @@
                                 @Html.Raw(Model.ProductDescription)
                             </div>
                         </div>
+                        <div id="tab-specification" class="tab-pane ">
+                            <div id="tab-specification" class="tab-pane">
+                                @foreach (var item in Model.ProductFile)
+                                {
+                                    <table class="table table-bordered">
+                                        @if (item.IsFree || IsUserInProduct)
+                                        {
+                                            <thead>
 
+                                                <tr>
+                                                    <td colspan="2"><strong>@item.FileTitle</strong></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    @if (item.IsFree)
+                                                    {
+                                                        <td>رایگان</td>
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>نقدی</td>
+                                                    }
+                                                    <td><a href="/DownloadFile/@item.FileId">لینک دانلود</a></td>
+                                                </tr>
+                                            </tbody>
+                                        }
+
+                                    </table>
+
+                                }
+                            </div>
+                        </div>
                         <div id="tab-review" class="tab-pane">
-                            <form class="form-horizontal">
-                                <div id="review">
-                                    <div>
-                                        <table class="table table-striped table-bordered">
-                                            <tbody>
-                                                <tr>
-                                                    <td style="width: 50%;"><strong><span>هاروی</span></strong></td>
-                                                    <td class="text-right"><span>1395/1/20</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <p>ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-                                                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <table class="table table-striped table-bordered">
-                                            <tbody>
-                                                <tr>
-                                                    <td style="width: 50%;"><strong><span>اندرسون</span></strong></td>
-                                                    <td class="text-right"><span>1395/1/20</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <p>ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-                                                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                            <div class="form-horizontal">
+                                <div id="listComment">
+                           
                                     <div class="text-right"></div>
                                 </div>
-                                <h2>یک بررسی بنویسید</h2>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label for="input-name" class="control-label">نام شما</label>
-                                        <input type="text" class="form-control" id="input-name" value="" name="name">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <form asp-controller="Product" asp-action="CreateComment"
+                                          data-ajax="true"
+                                          data-ajax-method="post"
+                                          data-ajax-mode="replace"
+                                          data-ajax-update="#listComment"
+                                          data-ajax-success="Success">
+                                        <input type="hidden" name="newComment.ProductId" value="@Model.ProductId" />
+                                        <h2>یک دیدگاه بنویسید</h2><div class="form-group required">
+                                        </div><div class="form-group required">
+                                            <div class="col-sm-12">
+                                                <label for="input-review" class="control-label">دیدگاه شما</label>
+                                                <textarea class="form-control" id="newComment_Comment" rows="5" name="text" placeholder="متن دیدگاه"></textarea>
+                                            </div>
+                                        </div><div class="buttons">
+                                            <div class="pull-right">
+                                                <button class="btn btn-primary" id="button-review" type="submit">ثبت</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                }
+                                else
+                                {
+                                    <div class="alert alert-danger">
+                                        جهت درج نظر باید وارد سایت شوید
                                     </div>
-                                </div>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label for="input-review" class="control-label">بررسی شما</label>
-                                        <textarea class="form-control" id="input-review" rows="5" name="text"></textarea>
-                                        <div class="help-block"><span class="text-danger">توجه :</span> HTML بازگردانی نخواهد شد!</div>
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label">رتبه</label>
-                                        &nbsp;&nbsp;&nbsp; بد&nbsp;
-                                        <input type="radio" value="1" name="rating">
-                                        &nbsp;
-                                        <input type="radio" value="2" name="rating">
-                                        &nbsp;
-                                        <input type="radio" value="3" name="rating">
-                                        &nbsp;
-                                        <input type="radio" value="4" name="rating">
-                                        &nbsp;
-                                        <input type="radio" value="5" name="rating">
-                                        &nbsp;خوب
-                                    </div>
-                                </div>
-                                <div class="buttons">
-                                    <div class="pull-right">
-                                        <button class="btn btn-primary" id="button-review" type="button">ادامه</button>
-                                    </div>
-                                </div>
-                            </form>
+                                }
+                            </div>
                         </div>
                     </div>
                     <h3 class="subtitle">محصولات مرتبط</h3>
@@ -166,10 +185,34 @@
                     <p> در متنوع ترین محصولات کار خود را آغاز کرده است.</p>
                     <p>شما می توانید جهت هرگونه پشتیبانی و هر مورد دیگر، به تماس با ما وب سایت مراجعه کنید.</p>
                 </div>
-
+                @if (Model.Tags != null)
+                {
+                    <div class="tags-layer">
+                        @foreach (string tag in Model.Tags.Split('-', StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            <a href="/Product?filter=@tag"> @tag </a>
+                        }
+                    </div>
+                }
             </aside>
             <!--Right Part End -->
         </div>
     </div>
 </div>
+@section Scripts
+    {
+    <script src="/js/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        function Success() {
+            $("#newComment_Comment").val("");
+        }
 
+        $(function() {
+            $("#listComment").load("/Product/ShowComment/" + @Model.ProductId);
+        });
+
+        function pageComment(pageid) {
+            $("#listComment").load("/Product/ShowComment/" + @Model.ProductId+"?pageId="+pageid);
+        }
+    </script>
+}

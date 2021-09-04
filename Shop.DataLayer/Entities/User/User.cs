@@ -43,6 +43,7 @@ namespace Shop.DataLayer.Entities.User
         public virtual List<Wallet.Wallet> Wallets { get; set; }
         public virtual List<Order> Orders { get; set; }
         public List<UserProduct> UserProducts { get; set; }
+        public List<ProductComment> ProductComments { get; set; }
         #endregion
     }
 }

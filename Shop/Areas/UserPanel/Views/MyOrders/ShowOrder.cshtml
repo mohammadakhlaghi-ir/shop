@@ -4,9 +4,10 @@
 @inject IUserService _UserService
 
 @{
-    ViewData["Title"] = "نمایش فاکتور";
+    ViewData["Title"] = "فاکتور" + Model.OrderId;
 
-    int sumOrder = Model.OrderDetails.Sum(od => od.Price);
+    string discountType = ViewBag.typeDiscount.ToString();
+    int sumOrder = Model.OrderSum;
 }
 
 <div id="container">
@@ -14,7 +15,8 @@
         <!-- Breadcrumb Start-->
         <ul class="breadcrumb">
             <li><a href="/"><i class="fa fa-home"></i></a></li>
-            <li><a href="/MyOrders">نمایش فاکتور</a></li>
+            <li><a href="/UserPanel/MyOrders">نمایش فاکتور</a></li>
+            <li><a href="/UserPanel/MyOrders/ShowOrder/@Model.OrderId">فاکتور @Model.OrderId </a></li>
 
         </ul>
         <!-- Breadcrumb End-->
@@ -44,10 +46,10 @@
                             {
                                 <tr>
                                     <td>
-                                        <a href="/product/ShowCourse/@item.Product" target="_blank">@item.Product.ProductTitle</a>
+                                        <a href="/product/ShowProduct/@item.ProductId" target="_blank">@item.Product.ProductTitle</a>
                                     </td>
 
-                                    <td>@item.Price</td>
+                                    <td>@item.Price تومان</td>
                                     <td>
                                         @( item.Price.ToString("#,0")) تومان
                                     </td>
@@ -69,8 +71,53 @@
                                 <tr>
                                     <td colspan="3" class="text-left">کد تخفیف</td>
                                     <td>
-                                        <input type="text" class="form-control" />
-                                        <input type="submit" class="btn btn-primary btn-block" style="margin-top: 5px" value="اعمال" />
+                                        <form action="/UserPanel/MyOrders/UseDiscount" method="post">
+                                            <input type="hidden" name="orderid" value="@Model.OrderId" />
+                                            <input type="text" name="code" class="form-control" />
+                                            <input type="submit" class="btn btn-primary btn-block" style="margin-top: 5px" value="اعمال" />
+
+                                            @if (discountType != "")
+                                            {
+                                                switch (discountType)
+                                                {
+                                                    case "Success":
+                                                        {
+                                                            <div class="alert alert-success">
+                                                                <p class="text-muted">کد با موفقیت اعمال شد</p>
+                                                            </div>
+                                                            break;
+                                                        }
+                                                    case "ExpierDate":
+                                                        {
+                                                            <div class="alert alert-danger">
+                                                                <p class="text-muted">تاریخ کد به اتمام رسیده است</p>
+                                                            </div>
+                                                            break;
+                                                        }
+                                                    case "NotFound":
+                                                        {
+                                                            <div class="alert alert-warning">
+                                                                <p class="text-muted">کد معتبر نیست</p>
+                                                            </div>
+                                                            break;
+                                                        }
+                                                    case "Finished":
+                                                        {
+                                                            <div class="alert alert-danger">
+                                                                <p class="text-muted">کد به اتمام رسیده است</p>
+                                                            </div>
+                                                            break;
+                                                        }
+                                                    case "UserUsed":
+                                                        {
+                                                            <div class="alert alert-info">
+                                                                <p class="text-muted">این کد قبلا توسط شما استفاده شده است</p>
+                                                            </div>
+                                                            break;
+                                                        }
+                                                }
+                                            }
+                                        </form>
                                     </td>
                                 </tr>
                             }

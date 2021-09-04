@@ -19,6 +19,35 @@ namespace Shop.DataLayer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Discount", b =>
+                {
+                    b.Property<int>("DiscountId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DiscountCode")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<int>("DiscountPercent")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UsableCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("DiscountId");
+
+                    b.ToTable("Discounts");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.Order", b =>
                 {
                     b.Property<int>("OrderId")
@@ -190,6 +219,41 @@ namespace Shop.DataLayer.Migrations
                     b.ToTable("ProductCategories");
                 });
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Product.ProductComment", b =>
+                {
+                    b.Property<int>("CommentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment")
+                        .HasMaxLength(700)
+                        .HasColumnType("nvarchar(700)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsAdminRead")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CommentId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ProductComments");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.Product.ProductFile", b =>
                 {
                     b.Property<int>("FileId")
@@ -298,6 +362,28 @@ namespace Shop.DataLayer.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Shop.DataLayer.Entities.User.UserDiscountCode", b =>
+                {
+                    b.Property<int>("UD_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DiscountId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UD_Id");
+
+                    b.HasIndex("DiscountId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserDiscountCodes");
                 });
 
             modelBuilder.Entity("Shop.DataLayer.Entities.User.UserRole", b =>
@@ -455,6 +541,25 @@ namespace Shop.DataLayer.Migrations
                         .HasForeignKey("ParentId");
                 });
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Product.ProductComment", b =>
+                {
+                    b.HasOne("Shop.DataLayer.Entities.Product.Product", "Product")
+                        .WithMany("ProductComments")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shop.DataLayer.Entities.User.User", "User")
+                        .WithMany("ProductComments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.Product.ProductFile", b =>
                 {
                     b.HasOne("Shop.DataLayer.Entities.Product.Product", "Product")
@@ -481,6 +586,25 @@ namespace Shop.DataLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Shop.DataLayer.Entities.User.UserDiscountCode", b =>
+                {
+                    b.HasOne("Shop.DataLayer.Entities.Discount", "Discount")
+                        .WithMany("UserDiscountCodes")
+                        .HasForeignKey("DiscountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shop.DataLayer.Entities.User.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Discount");
 
                     b.Navigation("User");
                 });
@@ -521,6 +645,11 @@ namespace Shop.DataLayer.Migrations
                     b.Navigation("walletType");
                 });
 
+            modelBuilder.Entity("Shop.DataLayer.Entities.Discount", b =>
+                {
+                    b.Navigation("UserDiscountCodes");
+                });
+
             modelBuilder.Entity("Shop.DataLayer.Entities.Order", b =>
                 {
                     b.Navigation("OrderDetails");
@@ -536,6 +665,8 @@ namespace Shop.DataLayer.Migrations
             modelBuilder.Entity("Shop.DataLayer.Entities.Product.Product", b =>
                 {
                     b.Navigation("OrderDetails");
+
+                    b.Navigation("ProductComments");
 
                     b.Navigation("ProductFile");
 
@@ -559,6 +690,8 @@ namespace Shop.DataLayer.Migrations
             modelBuilder.Entity("Shop.DataLayer.Entities.User.User", b =>
                 {
                     b.Navigation("Orders");
+
+                    b.Navigation("ProductComments");
 
                     b.Navigation("UserProducts");
 

@@ -1,4 +1,15 @@
 ﻿@model Shop.Core.DTOs.ShowProductListItemViewModel
+@using Shop.Core.Services.Interfaces
+@inject IOrderService _OrderService;
+@{
+
+    bool IsUserInProduct = false;
+
+    if (User.Identity.IsAuthenticated)
+    {
+        IsUserInProduct = _OrderService.IsUserInProduct(User.Identity.Name, Model.ProductId);
+    }
+}
 <div class="owl-item" style="width: 228px;">
     <div class="product-thumb">
         <div class="image"><a href="/product/ShowProduct/@Model.ProductId"><img src="/product/thumb/@Model.ImageName" alt="@Model.Title" title="@Model.Title" class="img-responsive" /></a></div>
@@ -6,7 +17,7 @@
             <h4><a href="/product/ShowProduct/@Model.ProductId">@Model.Title</a></h4>
             <p class="price"><span class="price-new">@((Model.Price==0)?"رایگان":Model.Price.ToString("#,0") + "تومان") </span> <span class="price-old">@((Model.Price==0)?null:Model.OldPrice.ToString("#,0") + "تومان")</span></p>
         </div>
-        @if (Model.Price != 0)
+        @if (Model.Price != 0 && !IsUserInProduct)
         {<div class="cart">
                 <div>
 

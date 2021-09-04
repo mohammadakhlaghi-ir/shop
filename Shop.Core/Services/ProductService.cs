@@ -299,8 +299,31 @@ namespace Shop.Core.Services
 
         public Product GetProductForShow(int productId)
         {
-            return _context.Products.Include(p => p.ProductFile)
+            return _context.Products.Include(p => p.ProductFile).Include(p=>p.UserProducts)
                .FirstOrDefault(p => p.ProductId == productId);
+
+        }
+
+        public void AddComment(ProductComment comment)
+        {
+            _context.ProductComments.Add(comment);
+            _context.SaveChanges();
+        }
+
+        public Tuple<List<ProductComment>, int> GetProductComment(int productId, int pageId = 1)
+        {
+            int take = 5;
+            int skip = (pageId - 1) * take;
+            int pageCount = _context.ProductComments.Where(p => !p.IsDelete && p.ProductId == productId).Count() / take;
+
+            if ((pageCount % 2) != 0)
+            {
+                pageCount += 1;
+            }
+
+            return Tuple.Create(
+                _context.ProductComments.Include(p => p.User).Where(p => !p.IsDelete && p.ProductId == productId).Skip(skip).Take(take)
+                    .OrderByDescending(c => c.CreateDate).ToList(), pageCount);
 
         }
     }
