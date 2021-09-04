@@ -30,7 +30,7 @@ namespace Shop.Controllers
             ViewBag.selectedCategories = selectedCategories;
             ViewBag.Categories = _productService.GetAllCategory();
             ViewBag.pageId = pageId;
-            return View(_productService.GetProduct(pageId, filter,  orderByType, selectedCategories, 40));
+            return View(_productService.GetProduct(pageId, filter,  orderByType, selectedCategories, 30));
         }
         [Route("Product/ShowProduct/{id}")]
         public IActionResult ShowProduct(int id)

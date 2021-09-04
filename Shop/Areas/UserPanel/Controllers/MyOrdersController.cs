@@ -34,30 +34,30 @@ namespace Shop.Areas.UserPanel.Controllers
 
             if (order == null)
             {
-                return Redirect("Error");
+                return Redirect("/404");
             }
 
             ViewBag.finaly = finaly;
             return View(order);
         }
-
+        
         public IActionResult FinalyOrder(int id)
         {
             if (_orderService.FinalyOrder(User.Identity.Name, id))
             {
-                return Redirect("/UserPanel/MyOrders/" + id + "?finaly=true");
+                return Redirect("/UserPanel/MyOrders/ShowOrder/" + id + "?finaly=true");
             }
 
             return BadRequest();
         }
         
+        
         public IActionResult Delete(int id)
         {
-           
             var orderDetail = _context.OrderDetails.Find(id);
             _context.Remove(orderDetail);
             _context.SaveChanges();
-            return Redirect("/UserPanel/MyOrders/Showorder" + orderDetail.OrderId);
+            return Redirect("/UserPanel/MyOrders/ShowOrder/"+orderDetail.OrderId);
         }
 
     }

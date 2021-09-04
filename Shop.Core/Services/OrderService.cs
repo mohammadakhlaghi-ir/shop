@@ -43,7 +43,7 @@ namespace Shop.Core.Services
                         new OrderDetail()
                         {
                             ProductId = productId,
-                            Count = 1,
+                           
                             Price = product.ProductPrice
                         }
                     }
@@ -65,7 +65,7 @@ namespace Shop.Core.Services
                     detail = new OrderDetail()
                     {
                         OrderId = order.OrderId,
-                        Count = 1,
+                        
                         ProductId = productId,
                         Price = product.ProductPrice,
                     };
@@ -138,7 +138,6 @@ namespace Shop.Core.Services
             return false;
         }
 
-        
       
     }
 

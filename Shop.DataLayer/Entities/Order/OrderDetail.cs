@@ -16,8 +16,7 @@ namespace Shop.DataLayer.Entities
         public int OrderId { get; set; }
         [Required]
         public int ProductId { get; set; }
-        [Required]
-        public int Count { get; set; }
+      
         [Required]
         public int Price { get; set; }
 

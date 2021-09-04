@@ -9,16 +9,27 @@
             <!-- Mini Cart Start-->
             <div class="col-table-cell col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div id="cart">
-                    <div class="col-table-cell col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div id="cart">
-                            <button asp-route="/userpanel/myorders/showorder" type="button" data-toggle="dropdown"  class="heading dropdown-toggle">
-                                <span class="cart-icon pull-left flip"></span>
-                                <span id="cart-total">سبد خرید</span>
-                            </button>
-                         
 
-                        </div>
-                    </div>
+                    <a href="/UserPanel/MyOrders" type="button" 
+                         
+                            class="heading dropdown-toggle"
+                            >
+                        <span class="cart-icon pull-left flip"></span>
+
+                        <span id="cart-total">
+
+
+
+                            نمایش فاکتورها
+                        </span>
+
+
+                    </a>
+
+
+                </div>
+            </div>
+
             <!-- Mini Cart End-->
             <!-- جستجو Start-->
             <form action="/Product" method="get">
@@ -29,8 +40,10 @@
                     </div>
                 </div>
             </form>
-        
+
             <!-- جستجو End-->
         </div>
     </div>
+
+
 </header>
