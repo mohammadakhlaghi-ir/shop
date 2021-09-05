@@ -1,4 +1,6 @@
-﻿@model Tuple<List<Shop.Core.DTOs.ShowProductListItemViewModel>, int>
+﻿@using Shop.Core.DTOs
+@using Shop.DataLayer.Entities.Product
+@model Tuple<List<Shop.Core.DTOs.ShowProductListItemViewModel>, int>
 @{
     ViewData["Title"] = "خانه";
 }
@@ -20,9 +22,11 @@
                 <!-- محصولات Tab Start -->
                 <div id="product-tab" class="product-tab">
                     <ul id="tabs" class="tabs">
-                        <li><a href="#tab-latest">جدیدترین</a></li>
+                        <li class="active"><a href="#tab-latest">جدیدترین</a></li>
+                        <li><a href="#tab-popular">محبوب ترین</a></li>
+
                     </ul>
-                    <div id="tab-featured" class="tab_content">
+                    <div id="tab-latest" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
                             @foreach (var item in Model.Item1)
                             {
@@ -30,7 +34,20 @@
                             }
                         </div>
                     </div>
-
+                    <div id="tab-popular" class="tab_content">
+                        <div class="owl-carousel product_carousel_tab">
+                            @{
+                                List<ShowProductListItemViewModel> popular = ViewBag.PopularProduct as List<ShowProductListItemViewModel>;
+                            }
+                            @if (popular != null)
+                            {
+                                foreach (var item in popular)
+                                {
+                                    <partial name="_BoxProduct" model="@item" />
+                                }
+                            }
+                        </div>
+                    </div>
 
 
 

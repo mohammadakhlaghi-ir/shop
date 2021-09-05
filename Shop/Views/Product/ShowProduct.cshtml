@@ -10,7 +10,24 @@
         IsUserInProduct = _OrderService.IsUserInProduct(User.Identity.Name, Model.ProductId);
     }
 }
+@section MetaTag
+    {
+    <meta name=googlebot content=index,follow>
+    <meta name=robots content=noodp,noydir>
+    <meta name=description content="شرح صفحه">
 
+    <meta property=og:site_name value="فروشگاه قالب محمد اخلاقی">
+    <meta property=og:title content="@Model.ProductTitle">
+    <meta property=og:url content="https://themesmad.ir/Product/ShowProduct/@Model.ProductTitle" />
+    <meta property=og:image content="/product/image/@Model.ProductImageName">
+    <meta property=og:image:url content="/product/image/@Model.ProductImageName" />
+    <meta property=og:image:width content="700">
+
+    <meta property=og:image:type content="image/jpg">
+    <meta property=og:description content="">
+    <meta property=og:price:currency content="IRR">
+    <meta property=og:locale content="ir_FA">
+}
 <div id="container">
     <div class="container">
         <!-- Breadcrumb Start-->
@@ -66,7 +83,7 @@
                                         </div>
 
                                     </div>}
-                                @if (!IsUserInProduct)
+                                @if (!IsUserInProduct && Model.ProductPrice != 0)
                                 {
                                     <div class="alert alert-info">
                                         <p>بعد از تایید فاکتور و پرداخت آن، لینک های دانلود برای شما فعال خواهد شد</p>
@@ -130,7 +147,7 @@
                         <div id="tab-review" class="tab-pane">
                             <div class="form-horizontal">
                                 <div id="listComment">
-                           
+
                                     <div class="text-right"></div>
                                 </div>
                                 @if (User.Identity.IsAuthenticated)
@@ -146,7 +163,7 @@
                                         </div><div class="form-group required">
                                             <div class="col-sm-12">
                                                 <label for="input-review" class="control-label">دیدگاه شما</label>
-                                                <textarea class="form-control" id="newComment_Comment" rows="5" name="text" placeholder="متن دیدگاه"></textarea>
+                                                <textarea class="form-control" id="newComment_Comment" rows="5" name="newComment.Comment" placeholder="متن دیدگاه"></textarea>
                                             </div>
                                         </div><div class="buttons">
                                             <div class="pull-right">
@@ -187,13 +204,36 @@
                 </div>
                 @if (Model.Tags != null)
                 {
-                    <div class="tags-layer">
+                    <div class="tags-layer" style="margin-bottom:20px">
                         @foreach (string tag in Model.Tags.Split('-', StringSplitOptions.RemoveEmptyEntries))
                         {
                             <a href="/Product?filter=@tag"> @tag </a>
                         }
                     </div>
                 }
+            <center>
+                <span > به اشتراک گذاری </span>
+                <div style="margin-top:20px" class="social pull-right flip">
+
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://themesmad.ir/Product/ShowProduct/@Model.ProductId">
+                        <img data-toggle="tooltip" src="/image/socialicons/facebook.png" alt="Facebook" title="" data-original-title="Facebook">
+                    </a>
+                    <a href="https://plus.google.com/share?url=https://themesmad.ir/Product/ShowProduct/@Model.ProductId">
+                        <img data-toggle="tooltip" src="/image/socialicons/google_plus.png" alt="Google+" title="" data-original-title="Google+" aria-describedby="tooltip544376">
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://themesmad.ir/Product/ShowProduct/@Model.ProductId">
+                        <img data-toggle="tooltip" src="/image/socialicons/twitter.png" alt="Twitter" title="" data-original-title="Twitter" aria-describedby="tooltip571058">
+                    </a>
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://themesmad.ir/Product/ShowProduct/@Model.ProductId">
+                        <img data-toggle="tooltip" src="/image/socialicons/linkedin.png" alt="Linkedin" title="" data-original-title="Linkedin" aria-describedby="tooltip571058">
+                    </a>
+
+                    <a href="whatsapp://send?text=%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%AF%D8%B1%20%DA%A9%D8%B1%D8%AC%20https://themesmad.ir/Product/ShowProduct/@Model.ProductId" target="_blank">
+                        <img data-toggle="tooltip" src="/image/socialicons/whatsapp.jpg" alt="WhatsApp" title="WhatsApp">
+                    </a>
+                </div>
+            </center>
+                
             </aside>
             <!--Right Part End -->
         </div>

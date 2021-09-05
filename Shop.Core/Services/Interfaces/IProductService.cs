@@ -28,6 +28,7 @@ namespace Shop.Core.Services.Interfaces
         Tuple<List<ShowProductListItemViewModel>, int> GetProduct(int pageId = 1, string filter = "",
             string orderByType = "date", List<int> selectedCategories = null, int take = 0);
         Product GetProductForShow(int productId);
+        List<ShowProductListItemViewModel> GetPopularProduct();
         #endregion
         #region ProductFile
         List<ProductFile> GetListProductFile(int productId);

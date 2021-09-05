@@ -217,13 +217,13 @@ namespace Shop.Core.Services
             _context.SaveChanges();
         }
 
-     
+
 
         public Tuple<List<ShowProductListItemViewModel>, int> GetProduct(int pageId = 1, string filter = "",
             string orderByType = "date", List<int> selectedCategories = null, int take = 0)
         {
             if (take == 0)
-                take = 4;
+                take = 8;
 
             IQueryable<Product> result = _context.Products;
 
@@ -299,7 +299,7 @@ namespace Shop.Core.Services
 
         public Product GetProductForShow(int productId)
         {
-            return _context.Products.Include(p => p.ProductFile).Include(p=>p.UserProducts)
+            return _context.Products.Include(p => p.ProductFile).Include(p => p.UserProducts)
                .FirstOrDefault(p => p.ProductId == productId);
 
         }
@@ -312,7 +312,7 @@ namespace Shop.Core.Services
 
         public Tuple<List<ProductComment>, int> GetProductComment(int productId, int pageId = 1)
         {
-            int take = 5;
+            int take = 10;
             int skip = (pageId - 1) * take;
             int pageCount = _context.ProductComments.Where(p => !p.IsDelete && p.ProductId == productId).Count() / take;
 
@@ -324,6 +324,25 @@ namespace Shop.Core.Services
             return Tuple.Create(
                 _context.ProductComments.Include(p => p.User).Where(p => !p.IsDelete && p.ProductId == productId).Skip(skip).Take(take)
                     .OrderByDescending(c => c.CreateDate).ToList(), pageCount);
+
+        }
+
+        public List<ShowProductListItemViewModel> GetPopularProduct()
+        {
+            return _context.Products.Include(o => o.OrderDetails)
+               .Where(c => c.OrderDetails.Any())
+               .OrderByDescending(d => d.OrderDetails.Count)
+               .Take(5)
+               .Select(p => new ShowProductListItemViewModel()
+               {
+                   ProductId = p.ProductId,
+                   ImageName = p.ProductImageName,
+                   OldPrice = p.ProductPriceOld,
+                   Price = p.ProductPrice,
+                   Title = p.ProductTitle,
+
+               })
+               .ToList();
 
         }
     }

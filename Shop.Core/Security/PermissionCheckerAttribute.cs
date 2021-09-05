@@ -28,7 +28,7 @@ namespace Shop.Core.Security
                 string userName = context.HttpContext.User.Identity.Name;
                 if (!_permissionService.CheckPermission(_permissionId, userName))
                 {
-                    context.Result = new RedirectResult("/Login");
+                    context.Result = new RedirectResult("/Login?" + context.HttpContext.Request.Path);
                 }
             }
             else

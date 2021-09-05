@@ -24,6 +24,8 @@ namespace Shop
         }
         public IActionResult Index()
         {
+            var popular = _productService.GetPopularProduct();
+            ViewBag.PopularProduct = popular;
             ViewBag.keywords = "فروشگاه قالب و پلاگین محمد اخلاقی | محمد اخلاقی  ";
             ViewBag.Descption = "فروشگاه قالب و پلاگین اختصاصی و غیر اختصاصی محمد اخلاقی برنامه نویس تحت بک اند و اپلیکیشن";
             return View(_productService.GetProduct());
