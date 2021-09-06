@@ -1,0 +1,17 @@
+﻿@page "{id}"
+@model Shop.Pages.Admin.ProductCategories.DeleteCategoryModel
+@{
+    ViewData["Title"] = "حذف دسته بندی";
+}
+<div class="container alert alert-danger">
+    <form method="post">
+        <input type="hidden" asp-for="ProductCategory.CategoryId" />
+        <input type="hidden" asp-for="ProductCategory.ParentId" />
+        <input type="hidden" asp-for="ProductCategory.CategoryTitle" />
+        <h2>آیا از حذف دسته بندی "@Model.ProductCategory.CategoryTitle" مطمئن هستید </h2>
+        <p>
+            <input type="submit" value="حذف کن" class="btn btn-outline btn-danger" />
+            <a asp-page="Index" class="btn btn-outline btn-info">انصراف</a>
+        </p>
+    </form>
+</div>

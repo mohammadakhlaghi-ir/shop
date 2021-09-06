@@ -21,6 +21,7 @@ namespace Shop.Core.Services.Interfaces
         User GetUserByActiveCode(string activeCode);
         void UpdateUser(User user);
         bool ActiveAccount(string activeCode);
+        List<User> GetAllUsers();
         int GetUserIdByUserName(string userName);
         void DeleteUser(int userId);
         #region User Panel

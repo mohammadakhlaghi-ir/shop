@@ -247,6 +247,38 @@ namespace Shop.Core.Services
             return _context.UserProducts.Any(c => c.UserId == userId && c.ProductId == productId);
 
         }
+
+        public List<Order> GetAllOrders()
+        {
+            return _context.Orders.ToList();
+        }
+
+        public OrderForAdminViewModel GetOrders(int pageId = 1, string filterOrderId = "", string filterUserName = "")
+        {
+            IQueryable<Order> result = _context.Orders.Include(o => o.User);
+            
+            if (!string.IsNullOrEmpty(filterOrderId))
+            {
+                result = result.Where(o => o.OrderId.ToString().Contains(filterOrderId));
+            }
+            if (!string.IsNullOrEmpty(filterUserName))
+            {
+                result = result.Where(u => u.User.UserName.Contains(filterUserName));
+            }
+
+
+            // Show Item In Page
+            int take = 20;
+            int skip = (pageId - 1) * take;
+
+
+            OrderForAdminViewModel list = new OrderForAdminViewModel();
+            list.CurrentPage = pageId;
+            list.PageCount = result.Count() / take;
+            list.Orders = result.OrderBy(u => u.CreateDate).Skip(skip).Take(take).ToList();
+
+            return list;
+        }
     }
 
 }

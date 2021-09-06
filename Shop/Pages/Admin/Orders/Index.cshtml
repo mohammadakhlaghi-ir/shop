@@ -1,0 +1,99 @@
+﻿@page
+
+@using Shop.Core.Convertors
+@model Shop.Pages.Admin.Orders.IndexModel
+@{
+    ViewData["Title"] = "لیست سفارشات";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">لیست سفارشات</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                لیست سفارشات سایت
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                        <div class="row">
+                            <form>
+                                <div class="col-sm-5 col-md-5">
+                                    <input type="text" name="filterUserName" class="form-control" placeholder="نام کاربری" />
+                                </div>
+                                <div class="col-sm-5 col-md-5">
+                                    <input type="number" name="filterOrderId" class="form-control" placeholder="شماره سفارش" />
+                                </div>
+                                <div class="col-sm-2 col-md-2">
+                                    <button type="submit" class="btn btn-info">بگرد</button>
+                                    <a class="btn btn-default btn-sm" href="/Admin/Orders">خالی</a>
+                                </div>
+                            </form>
+                        </div>
+                       
+                        <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                            <thead>
+                                <tr>
+                                    <th>نام کاربری</th>
+                                    <th>شماره سفارش</th>
+                                    <th>وضعیت</th>
+                                    <th>تاریخ سفارش</th>
+                                    <th>قیمت</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var order in Model.OrderForAdminViewModel.Orders)
+                                {
+                                <tr>
+                                    <td>@order.User.UserName</td>
+                                    <td>@order.OrderId</td>
+                                    <td>
+                                        @if (order.IsFinaly)
+                                        {
+                                            <p class="text-success">پرداخت شده</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="text-danger">پرداخت نشده</p>
+                                        }
+                                    </td>
+                                    <td>@order.CreateDate.ToShamsi()</td>
+                                    <td>@order.OrderSum تومان</td>
+
+                                </tr>
+                                }
+                            </tbody>
+                        </table><div class="row">
+                            <div class="col-sm-6">
+                                <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
+                                    <ul class="pagination">
+
+                                        @for (int i = 1; i <= Model.OrderForAdminViewModel.PageCount + 1; i++)
+                                        {
+                                            <li class="paginate_button @((i==Model.OrderForAdminViewModel.CurrentPage)?"active":"")" aria-controls="dataTables-example" tabindex="0">
+                                                <a href="/Admin/Orders?PageId=@i">@i</a>
+                                            </li>
+                                        }
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+

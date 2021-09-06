@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,7 @@ namespace Shop.DataLayer.Entities.User
 
         public virtual List<UserRole> UserRoles { get; set; }
         public virtual List<Wallet.Wallet> Wallets { get; set; }
+        [InverseProperty(nameof(Order.User))]
         public virtual List<Order> Orders { get; set; }
         public List<UserProduct> UserProducts { get; set; }
         public List<ProductComment> ProductComments { get; set; }

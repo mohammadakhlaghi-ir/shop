@@ -57,7 +57,7 @@ namespace Shop.Core.Services
 
         public List<ProductCategory> GetAllCategory()
         {
-            return _context.ProductCategories.ToList();
+            return _context.ProductCategories.Include(p => p.ProductCategories).ToList();
         }
 
         public List<SelectListItem> GetCategoryForManageProduct()
@@ -306,8 +306,17 @@ namespace Shop.Core.Services
 
         public void AddComment(ProductComment comment)
         {
-            _context.ProductComments.Add(comment);
-            _context.SaveChanges();
+            var replyComment = _context.ProductComments.Where(p => p.ParentId == p.CommentId);
+            if(comment != replyComment){
+                _context.ProductComments.Add(comment);
+                _context.SaveChanges();
+            }
+            else
+            {
+                _context.ProductComments.Add(comment);
+                _context.SaveChanges();
+            }
+            
         }
 
         public Tuple<List<ProductComment>, int> GetProductComment(int productId, int pageId = 1)
@@ -344,6 +353,80 @@ namespace Shop.Core.Services
                })
                .ToList();
 
+        }
+
+        public ProductCategory GetCategoryById(int categoryId)
+        {
+            return _context.ProductCategories.Find(categoryId);
+        }
+        public void AddCategory(ProductCategory @category)
+        {
+            _context.ProductCategories.Add(category);
+            _context.SaveChanges();
+        }
+
+        public void UpdateCategory(ProductCategory @category)
+        {
+            _context.ProductCategories.Update(category);
+            _context.SaveChanges();
+        }
+
+        public void DeleteCategory(ProductCategory category)
+        {
+            _context.ProductCategories.Remove(_context.ProductCategories.Find(category.CategoryId));
+
+            _context.SaveChanges();
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            return _context.Products.ToList();
+        }
+
+        public List<ProductComment> GetAllComments()
+        {
+            return _context.ProductComments.ToList();
+
+        }
+
+        public CommentForAdminVIewModel GetComments(int pageId = 1, string filterProductName = "", string filterUserName = "")
+        {
+            IQueryable<ProductComment> result = _context.ProductComments.Include(c => c.User).Include(c=>c.Product);
+
+            if (!string.IsNullOrEmpty(filterProductName))
+            {
+                result = result.Where(o => o.Product.ProductTitle.ToString().Contains(filterProductName));
+            }
+            if (!string.IsNullOrEmpty(filterUserName))
+            {
+                result = result.Where(u => u.User.UserName.Contains(filterUserName));
+            }
+
+
+            // Show Item In Page
+            int take = 20;
+            int skip = (pageId - 1) * take;
+
+
+            CommentForAdminVIewModel list = new CommentForAdminVIewModel();
+            list.CurrentPage = pageId;
+            list.PageCount = result.Count() / take;
+            list.Commetns = result.OrderBy(u => u.CreateDate).Skip(skip).Take(take).ToList();
+
+            return list;
+        }
+
+        public ProductComment GetCommentById(int productCommentId)
+        {
+            return _context.ProductComments.Find(productCommentId);
+
+        }
+
+        public void DeleteComment(ProductComment productComment)
+        {
+            _context.ProductComments.Remove(_context.ProductComments.Find(productComment.CommentId));
+
+            _context.SaveChanges();
         }
     }
 }

@@ -306,5 +306,10 @@ namespace Shop.Core.Services
 
             return information;
         }
+
+        public List<User> GetAllUsers()
+        {
+            return _context.Users.ToList();
+        }
     }
 }

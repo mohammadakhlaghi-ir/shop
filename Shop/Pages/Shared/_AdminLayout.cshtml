@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Shop.Core.Services.Interfaces
+
+@inject IPermissionService _PermissionService
+
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -53,32 +58,62 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
-                            <a href="/Admin"><i class="fa fa-dashboard fa-fw"></i> پنل ادمین</a>
-                        </li>
+                        @if (_PermissionService.CheckPermission(1, User.Identity.Name))
+                        {
+                            <li>
+                                <a href="/Admin"><i class="fa fa-dashboard fa-fw"></i> پنل ادمین</a>
+                            </li>
+                        }
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> مدیریت کاربران<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/Admin/roles">دسترسی ها</a>
-                                </li>
-                                <li>
-                                    <a href="/Admin/Users">کاربران</a>
-                                </li>
-                                <li>
-                                    <a href="/Admin/Users/ListDeleteUsers">کاربران حذف شده</a>
-                                </li>
-
+                                @if (_PermissionService.CheckPermission(6, User.Identity.Name))
+                                {
+                                    <li>
+                                        <a href="/Admin/roles">دسترسی ها</a>
+                                    </li>
+                                }
+                                @if (_PermissionService.CheckPermission(2, User.Identity.Name))
+                                {
+                                    <li>
+                                        <a href="/Admin/Users">کاربران</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Admin/Users/ListDeleteUsers">کاربران حذف شده</a>
+                                    </li>
+                                }
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="/Admin/Products">لیست محصولات</a>
-                        </li>
-                        <li>
-                            <a href="/Admin/Discounts">کد های تخفیف</a>
-                        </li>
-                    </ul>
+                        @if (_PermissionService.CheckPermission(10, User.Identity.Name))
+                        {
+                            <li>
+                                <a href="/Admin/Products">لیست محصولات</a>
+                            </li>
+                        }
+                        @if (_PermissionService.CheckPermission(22, User.Identity.Name))
+                        {
+                            <li>
+                                <a href="/Admin/productcategories">دسته بندی ها</a>
+                            </li>
+                        }
+                        @if (_PermissionService.CheckPermission(18, User.Identity.Name))
+                        {
+                            <li>
+                                <a href="/Admin/Discounts">کد های تخفیف</a>
+                            </li>
+                        }
+                        @if (_PermissionService.CheckPermission(26, User.Identity.Name))
+                        {
+                            <li>
+                                <a href="/Admin/ORders">لیست سفارشات</a>
+                            </li>
+                        }  @if (_PermissionService.CheckPermission(27, User.Identity.Name))
+                        {
+                            <li>
+                                <a href="/Admin/comments">لیست دیدگاه ها</a>
+                            </li>}
+                        </ul>
                     <!-- /#side-menu -->
                 </div>
                 <!-- /.sidebar-collapse -->

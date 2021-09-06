@@ -239,6 +239,9 @@ namespace Shop.DataLayer.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -246,6 +249,8 @@ namespace Shop.DataLayer.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("CommentId");
+
+                    b.HasIndex("ParentId");
 
                     b.HasIndex("ProductId");
 
@@ -543,6 +548,10 @@ namespace Shop.DataLayer.Migrations
 
             modelBuilder.Entity("Shop.DataLayer.Entities.Product.ProductComment", b =>
                 {
+                    b.HasOne("Shop.DataLayer.Entities.Product.ProductComment", null)
+                        .WithMany("ProductComments")
+                        .HasForeignKey("ParentId");
+
                     b.HasOne("Shop.DataLayer.Entities.Product.Product", "Product")
                         .WithMany("ProductComments")
                         .HasForeignKey("ProductId")
@@ -680,6 +689,11 @@ namespace Shop.DataLayer.Migrations
                     b.Navigation("Products");
 
                     b.Navigation("SubCategory");
+                });
+
+            modelBuilder.Entity("Shop.DataLayer.Entities.Product.ProductComment", b =>
+                {
+                    b.Navigation("ProductComments");
                 });
 
             modelBuilder.Entity("Shop.DataLayer.Entities.User.Role", b =>

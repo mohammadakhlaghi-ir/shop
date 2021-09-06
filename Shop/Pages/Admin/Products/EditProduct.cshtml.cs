@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,8 +31,20 @@ namespace Shop.Pages.Admin.Products
             var categories = _productService.GetCategoryForManageProduct();
             ViewData["Categories"] = new SelectList(categories, "Value", "Text", Product.CategoryId);
 
-            var subCategories = _productService.GetSubCategoryForManageProduct(int.Parse(categories.First().Value));
-            ViewData["SubCategories"] = new SelectList(subCategories, "Value", "Text",Product.SubCategory??0);
+            List<SelectListItem> subCategories = new List<SelectListItem>()
+            {
+                new SelectListItem(){Text = "انتخاب کنید",Value = ""}
+            };
+            subCategories.AddRange(_productService.GetSubCategoryForManageProduct(Product.CategoryId));
+            string selectedSubCategory = null;
+            if (Product.SubCategory != null)
+            {
+                selectedSubCategory = Product.SubCategory.ToString();
+            }
+            ViewData["SubCategories"] = new SelectList(subCategories, "Value", "Text", selectedSubCategory);
+
+            //var subCategories = _productService.GetSubCategoryForManageProduct(int.Parse(categories.First().Value));
+            //ViewData["SubCategories"] = new SelectList(subCategories, "Value", "Text",Product.SubCategory??0);
 
 
 

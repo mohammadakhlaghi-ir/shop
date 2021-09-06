@@ -12,7 +12,7 @@ namespace Shop.Core.Services.Interfaces
     {
         #region Order
         int AddOrder(string userName, int prodcutId);
-
+        List<Order> GetAllOrders();
         void UpdatePriceOrder(int orderId);
         Order GetOrderForUserPanel(string userName, int orderId);
         Order GetOrderById(int orderId);
@@ -21,6 +21,7 @@ namespace Shop.Core.Services.Interfaces
 
         void UpdateOrder(Order order);
         bool IsUserInProduct(string userName, int productId);
+        OrderForAdminViewModel GetOrders(int pageId = 1, string filterOrderId = "", string filterUserName = "");
         #endregion
         #region DisCount
 

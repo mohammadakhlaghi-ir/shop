@@ -23,6 +23,7 @@ namespace Shop.Pages.Admin.Discounts
         public void OnGet()
         {
             Discounts = _orderService.GetAllDiscounts();
+            
         }
 
     }
