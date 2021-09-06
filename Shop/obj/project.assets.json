@@ -2299,6 +2299,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Zarinpal/2.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.5",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/Zarinpal.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/Zarinpal.dll": {}
+        }
+      },
       "ZarinpalSandbox/2.0.4": {
         "type": "package",
         "dependencies": {
@@ -8098,6 +8111,18 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Zarinpal/2.0.4": {
+      "sha512": "iGVX2YQUFe7veIKKYjxFY2bGhNlqzI0ooveUe/TYEIAtLh5jCYv1stgmp+EJyeWX9wRl81zs9N0IT5im3NZOkw==",
+      "type": "package",
+      "path": "zarinpal/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp1.0/Zarinpal.dll",
+        "zarinpal.2.0.4.nupkg.sha512",
+        "zarinpal.nuspec"
+      ]
+    },
     "ZarinpalSandbox/2.0.4": {
       "sha512": "bDuCkin4KqcZggLQBjDw0CK9PU6U8SmlLbJh7UHzcKBsSmKXmRE4myLls+A/cxDuqh0EucSAdthMiFM6odu58A==",
       "type": "package",
@@ -8134,7 +8159,8 @@
       "MimeKit >= 2.15.0",
       "Shop.Core >= 1.0.0",
       "Shop.DataLayer >= 1.0.0",
-      "ZarinPalSandbox >= 2.0.4"
+      "Zarinpal >= 2.0.4",
+      "ZarinpalSandbox >= 2.0.4"
     ]
   },
   "packageFolders": {
@@ -8228,7 +8254,11 @@
             "target": "Package",
             "version": "[2.15.0, )"
           },
-          "ZarinPalSandbox": {
+          "Zarinpal": {
+            "target": "Package",
+            "version": "[2.0.4, )"
+          },
+          "ZarinpalSandbox": {
             "target": "Package",
             "version": "[2.0.4, )"
           }

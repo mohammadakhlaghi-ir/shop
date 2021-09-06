@@ -42,13 +42,14 @@ namespace Shop
         [Route("OnlinePayment/{id}")]
         public IActionResult onlinePayment(int id)
         {
+           
             if (HttpContext.Request.Query["Status"] != "" &&
                 HttpContext.Request.Query["Status"].ToString().ToLower() == "ok" &&
                 HttpContext.Request.Query["Authority"] != "")
             {
                 string authority = HttpContext.Request.Query["Authority"];
                 var wallet = _userService.GetWalletByWalletId(id);
-                var payment = new ZarinpalSandbox.Payment(wallet.Amount);
+                var payment = new Zarinpal.Payment("f54d6d44-a637-43b4-b171-87c237dae35c", wallet.Amount);
                 var res = payment.Verification(authority).Result;
                 if (res.Status == 100)
                 {

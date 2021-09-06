@@ -79,7 +79,7 @@ namespace Shop
             }
             else
             {
-                app.UseExceptionHandler("Error");
+                app.UseExceptionHandler("/Error");
             }
             app.Use(async (context, next) =>
             {

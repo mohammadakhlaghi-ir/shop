@@ -24,7 +24,6 @@ E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\ref\Shop.Core.dll
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.Core.pdb
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.dll
 E:\project\asp\shop\shop\Shop.Core\bin\Debug\net5.0\Shop.DataLayer.pdb
-E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.AssemblyReference.cache
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.GeneratedMSBuildEditorConfig.editorconfig
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.AssemblyInfoInputs.cache
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.AssemblyInfo.cs

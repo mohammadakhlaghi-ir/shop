@@ -272,7 +272,11 @@
               "target": "Package",
               "version": "[2.15.0, )"
             },
-            "ZarinPalSandbox": {
+            "Zarinpal": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
+            "ZarinpalSandbox": {
               "target": "Package",
               "version": "[2.0.4, )"
             }

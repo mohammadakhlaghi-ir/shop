@@ -217,3 +217,4 @@ E:\project\asp\shop\shop\Shop\obj\Release\net5.0\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Release\net5.0\ref\Shop.dll
 E:\project\asp\shop\shop\Shop\obj\Release\net5.0\Shop.pdb
 E:\project\asp\shop\shop\Shop\obj\Release\net5.0\Shop.genruntimeconfig.cache
+E:\project\asp\shop\shop\Shop\bin\Release\net5.0\Zarinpal.dll
