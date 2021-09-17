@@ -33,3 +33,4 @@ E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.dll
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\ref\Shop.Core.dll
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.pdb
 E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.genruntimeconfig.cache
+E:\project\asp\shop\shop\Shop.Core\obj\Debug\net5.0\Shop.Core.csproj.AssemblyReference.cache

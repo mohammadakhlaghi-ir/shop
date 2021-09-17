@@ -48,6 +48,10 @@ namespace Shop.Core.DTOs
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string Password { get; set; }
+        [Display(Name = "موجودی کیف پول")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public int Wallet { get; set; }
         public List<int> UserRoles { get; set; }
     }
 }

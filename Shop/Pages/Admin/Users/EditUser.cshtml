@@ -3,7 +3,7 @@
 @model Shop.Pages.Admin.Users.EditUserModel
 
 @{
-    ViewData["Title"] = "افزودن کاربر";
+    ViewData["Title"] = "ویرایش کاربر";
     List<Role> Roles = ViewData["Roles"] as List<Role>;
 }
 
@@ -36,6 +36,10 @@
                         <label>کلمه عبور</label>
                         <input type="text" asp-for="EditUserViewModel.Password" class="form-control">
                         <p class="help-block">در صورت وارد کردن کلمه عبور، کلمه عبور کاربر تغییر خواهد کرد</p>
+                    </div>
+                    <div class="form-group">
+                        <label>موجودی کیف پول</label>
+                        <input type="number" asp-for="EditUserViewModel.Wallet" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>انتخاب نقش کاربر</label>

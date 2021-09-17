@@ -237,6 +237,7 @@ namespace Shop.Core.Services
         {
             return _context.Users.Where(u => u.UserId == userId).Select(u => new EditUserViewModel()
             {
+                Wallet = BalanceUserWallet(u.UserName),
                 Email = u.Email,
                 UserId = u.UserId,
                 UserName = u.UserName,
