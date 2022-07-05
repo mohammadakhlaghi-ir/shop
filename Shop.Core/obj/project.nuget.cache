@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yQq5Ug3npxO+cvat28tX0VzQrw3TdBjNrKMy3Vt5shU5l6a+fh8lEojOYW18bIqgV+8OvLGBWp1Q7h62qYYong==",
+  "dgSpecHash": "AsHA8nt36jIOWgfJE08tXdVtV07Tt1cfU2qEW8Ow2QulBUAz6psA9ToWx54Imcfko9eSGqPK8oLe6MO5sIdWsA==",
   "success": true,
-  "projectFilePath": "E:\\project\\asp\\shop\\shop\\Shop.Core\\Shop.Core.csproj",
+  "projectFilePath": "C:\\Users\\wolf\\Desktop\\proje\\shop\\Shop.Core\\Shop.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wolf\\.nuget\\packages\\corecompat.system.drawing.v2\\5.2.0-preview1-r131\\corecompat.system.drawing.v2.5.2.0-preview1-r131.nupkg.sha512",
     "C:\\Users\\wolf\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

@@ -139,7 +139,7 @@ namespace Shop.Core.Services
             var exit = _context.Wallets.Where(w => w.UserId == userId && w.TypeId == 2).Select(w => w.Amount).ToList();
             return (enter.Sum() - exit.Sum());
         }
-
+      
         public int GetUserIdByUserName(string userName)
         {
             return _context.Users.Single(u => u.UserName == userName).UserId;

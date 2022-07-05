@@ -6741,11 +6741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\project\\asp\\shop\\shop\\Shop.Core\\Shop.Core.csproj",
+      "projectUniqueName": "C:\\Users\\wolf\\Desktop\\proje\\shop\\Shop.Core\\Shop.Core.csproj",
       "projectName": "Shop.Core",
-      "projectPath": "E:\\project\\asp\\shop\\shop\\Shop.Core\\Shop.Core.csproj",
+      "projectPath": "C:\\Users\\wolf\\Desktop\\proje\\shop\\Shop.Core\\Shop.Core.csproj",
       "packagesPath": "C:\\Users\\wolf\\.nuget\\packages\\",
-      "outputPath": "E:\\project\\asp\\shop\\shop\\Shop.Core\\obj\\",
+      "outputPath": "C:\\Users\\wolf\\Desktop\\proje\\shop\\Shop.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
@@ -6767,8 +6767,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\project\\asp\\shop\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj": {
-              "projectPath": "E:\\project\\asp\\shop\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj"
+            "C:\\Users\\wolf\\Desktop\\proje\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj": {
+              "projectPath": "C:\\Users\\wolf\\Desktop\\proje\\shop\\Shop.DataLayer\\Shop.DataLayer.csproj"
             }
           }
         }
@@ -6829,7 +6829,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
       }
     }
   }
