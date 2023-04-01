@@ -132,12 +132,12 @@
                                 <tr>
                                     <td colspan="2" class="text-left"></td>
                                     <td colspan="2">
-                                        @*@if (_UserService.BalanceUserWallet(User.Identity.Name) >= @Model.OrderSum)
-                                        {*@
+                                        @if (_UserService.BalanceUserWallet(User.Identity.Name) >= @Model.OrderSum)
+                                        {
                                             <a class="btn btn-success btn-block" 
                                                href="/UserPanel/MyOrders/FinalyOrder/@Model.OrderId">تایید فاکتور</a>
-                                        @*  *@<!--}-->
-                                        @*else
+                                          }
+                                        else
                                         {
                                             <a class="btn btn-success btn-block" disabled>تایید فاکتور</a>
                                             <div class="alert alert-danger">
@@ -145,7 +145,7 @@
                                                 <a href="/UserPanel/Wallet" class="alert-link">لینک</a>
                                                 اقدام به شارژ حساب کنید
                                             </div>
-                                        }*@
+                                        }
 
                                     </td>
                                 </tr>
