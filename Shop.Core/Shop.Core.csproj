@@ -26,5 +26,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Shop.DataLayer\Shop.DataLayer.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TemplateNew\public\assets\img\icons\" />
+    <Folder Include="TemplateNew\public\assets\img\illustrations\" />
+  </ItemGroup>
  
 </Project>
