@@ -16,11 +16,11 @@ namespace Shop.Core.Convertors
 
             const long quality = 50L;
 
-            Bitmap source_Bitmap = new Bitmap(input_Image_Path);
+			System.Drawing.Bitmap source_Bitmap = new System.Drawing.Bitmap(input_Image_Path);
 
 
 
-            double dblWidth_origial = source_Bitmap.Width;
+			double dblWidth_origial = source_Bitmap.Width;
 
             double dblHeigth_origial = source_Bitmap.Height;
 
