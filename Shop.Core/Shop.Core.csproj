@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TemplateNew\**" />
+    <EmbeddedResource Remove="TemplateNew\**" />
+    <None Remove="TemplateNew\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="DTOs\User\UsersViewModel.cs~RF1a3e04.TMP" />
   </ItemGroup>
 
@@ -25,11 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shop.DataLayer\Shop.DataLayer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="TemplateNew\public\assets\img\icons\" />
-    <Folder Include="TemplateNew\public\assets\img\illustrations\" />
   </ItemGroup>
  
 </Project>

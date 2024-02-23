@@ -257,9 +257,9 @@ D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\staticwebassets\msbuild.buildM
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Shop.props
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\staticwebassets.pack.json
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\scopedcss\bundle\Shop.styles.css
-D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\Shop.csproj.CopyComplete
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\Shop.dll
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\refint\Shop.dll
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\Shop.pdb
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\Shop.genruntimeconfig.cache
 D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\ref\Shop.dll
+D:\project\themsmad.ir\shop\Shop\obj\Debug\net8.0\Shop.csproj.Up2Date

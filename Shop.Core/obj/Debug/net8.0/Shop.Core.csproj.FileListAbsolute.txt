@@ -10,9 +10,9 @@ D:\project\themsmad.ir\shop\Shop.Core\bin\Debug\net8.0\Shop.Core.dll
 D:\project\themsmad.ir\shop\Shop.Core\bin\Debug\net8.0\Shop.Core.pdb
 D:\project\themsmad.ir\shop\Shop.Core\bin\Debug\net8.0\Shop.DataLayer.dll
 D:\project\themsmad.ir\shop\Shop.Core\bin\Debug\net8.0\Shop.DataLayer.pdb
-D:\project\themsmad.ir\shop\Shop.Core\obj\Debug\net8.0\Shop.Core.csproj.CopyComplete
 D:\project\themsmad.ir\shop\Shop.Core\obj\Debug\net8.0\Shop.Core.dll
 D:\project\themsmad.ir\shop\Shop.Core\obj\Debug\net8.0\refint\Shop.Core.dll
 D:\project\themsmad.ir\shop\Shop.Core\obj\Debug\net8.0\Shop.Core.pdb
 D:\project\themsmad.ir\shop\Shop.Core\obj\Debug\net8.0\Shop.Core.genruntimeconfig.cache
 D:\project\themsmad.ir\shop\Shop.Core\obj\Debug\net8.0\ref\Shop.Core.dll
+D:\project\themsmad.ir\shop\Shop.Core\obj\Debug\net8.0\Shop.Core.csproj.Up2Date

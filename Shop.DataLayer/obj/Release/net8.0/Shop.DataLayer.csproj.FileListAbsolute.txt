@@ -1,0 +1,15 @@
+D:\project\themsmad.ir\shop\Shop.DataLayer\bin\Release\net8.0\Shop.DataLayer.deps.json
+D:\project\themsmad.ir\shop\Shop.DataLayer\bin\Release\net8.0\Shop.DataLayer.runtimeconfig.json
+D:\project\themsmad.ir\shop\Shop.DataLayer\bin\Release\net8.0\Shop.DataLayer.dll
+D:\project\themsmad.ir\shop\Shop.DataLayer\bin\Release\net8.0\Shop.DataLayer.pdb
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.csproj.AssemblyReference.cache
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.AssemblyInfoInputs.cache
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.AssemblyInfo.cs
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.csproj.CoreCompileInputs.cache
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.sourcelink.json
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.dll
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\refint\Shop.DataLayer.dll
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.pdb
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\Shop.DataLayer.genruntimeconfig.cache
+D:\project\themsmad.ir\shop\Shop.DataLayer\obj\Release\net8.0\ref\Shop.DataLayer.dll

@@ -1,0 +1,481 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\bootstrap-rtl.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\bootstrap-rtl.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\plugins\\dataTables\\dataTables.bootstrap.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\plugins\\dataTables\\dataTables.bootstrap.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\plugins\\morris\\morris-0.4.3.min.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\plugins\\morris\\morris-0.4.3.min.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\plugins\\social-buttons\\social-buttons.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\plugins\\social-buttons\\social-buttons.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\plugins\\timeline\\timeline.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\plugins\\timeline\\timeline.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\css\\sb-admin.css",
+      "PackagePath": "staticwebassets\\AdminContent\\css\\sb-admin.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\css\\font-awesome.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\bordered-pulled.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\bordered-pulled.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\core.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\core.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\fixed-width.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\fixed-width.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\font-awesome.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\font-awesome.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\icons.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\icons.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\larger.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\larger.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\list.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\list.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\mixins.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\mixins.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\path.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\path.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\rotated-flipped.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\rotated-flipped.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\spinning.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\spinning.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\stacked.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\stacked.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\less\\variables.less",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\less\\variables.less"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_core.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_icons.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_larger.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_list.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_path.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_path.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_spinning.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_spinning.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\font-awesome\\scss\\font-awesome.scss",
+      "PackagePath": "staticwebassets\\AdminContent\\font-awesome\\scss\\font-awesome.scss"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\AdminContent\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\AdminContent\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\AdminContent\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\AdminContent\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\demo\\dashboard-demo.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\demo\\dashboard-demo.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\demo\\flot-demo.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\demo\\flot-demo.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\demo\\morris-demo.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\demo\\morris-demo.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\jquery-1.10.2.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\jquery-1.10.2.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\dataTables\\dataTables.bootstrap.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\dataTables\\dataTables.bootstrap.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\dataTables\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\dataTables\\jquery.dataTables.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\flot\\excanvas.min.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\flot\\excanvas.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\flot\\jquery.flot.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\flot\\jquery.flot.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\flot\\jquery.flot.pie.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\flot\\jquery.flot.pie.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\flot\\jquery.flot.resize.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\flot\\jquery.flot.resize.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\flot\\jquery.flot.tooltip.min.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\flot\\jquery.flot.tooltip.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\metisMenu\\jquery.metisMenu.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\metisMenu\\jquery.metisMenu.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\morris\\morris.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\morris\\morris.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\plugins\\morris\\raphael-2.1.0.min.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\plugins\\morris\\raphael-2.1.0.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\AdminContent\\js\\sb-admin.js",
+      "PackagePath": "staticwebassets\\AdminContent\\js\\sb-admin.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\css\\jquery.dataTables.min.css",
+      "PackagePath": "staticwebassets\\css\\jquery.dataTables.min.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\css\\noUiSlider\\nouislider.min.css",
+      "PackagePath": "staticwebassets\\css\\noUiSlider\\nouislider.min.css"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\css\\noUiSlider\\nouislider.min.js",
+      "PackagePath": "staticwebassets\\css\\noUiSlider\\nouislider.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\banner\\develop.jpg",
+      "PackagePath": "staticwebassets\\image\\banner\\develop.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\banner\\developapp.jpg",
+      "PackagePath": "staticwebassets\\image\\banner\\developapp.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\banner\\insta.jpg",
+      "PackagePath": "staticwebassets\\image\\banner\\insta.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\banner\\whatsapp.jpg",
+      "PackagePath": "staticwebassets\\image\\banner\\whatsapp.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\enmad.jpg",
+      "PackagePath": "staticwebassets\\image\\enmad.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\favicon.png",
+      "PackagePath": "staticwebassets\\image\\favicon.png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\logo-small.png",
+      "PackagePath": "staticwebassets\\image\\logo-small.png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\logo.png",
+      "PackagePath": "staticwebassets\\image\\logo.png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\slider\\banner1.jpg",
+      "PackagePath": "staticwebassets\\image\\slider\\banner1.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\slider\\banner2.jpg",
+      "PackagePath": "staticwebassets\\image\\slider\\banner2.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\slider\\banner3.jpg",
+      "PackagePath": "staticwebassets\\image\\slider\\banner3.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\socialicons\\github.jpg",
+      "PackagePath": "staticwebassets\\image\\socialicons\\github.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\socialicons\\telegram.jpg",
+      "PackagePath": "staticwebassets\\image\\socialicons\\telegram.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\image\\socialicons\\whatsapp.jpg",
+      "PackagePath": "staticwebassets\\image\\socialicons\\whatsapp.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\js\\Config.js",
+      "PackagePath": "staticwebassets\\js\\Config.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\js\\jquery.unobtrusive-ajax.js",
+      "PackagePath": "staticwebassets\\js\\jquery.unobtrusive-ajax.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\js\\jquery.unobtrusive-ajax.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.unobtrusive-ajax.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\js\\kendo.all.min.js",
+      "PackagePath": "staticwebassets\\js\\kendo.all.min.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\10.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\10.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\5.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\5.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\7.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\7.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\8.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\8.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\9.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\9.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\KARIN Logo - RGB-01.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\KARIN Logo - RGB-01.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\New Project (2) (1).png",
+      "PackagePath": "staticwebassets\\productFiles\\New Project (2) (1).png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\banner2.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\banner2.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\banner3.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\banner3.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\developapp.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\developapp.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\productFiles\\whatsapp.jpg",
+      "PackagePath": "staticwebassets\\productFiles\\whatsapp.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\02fca14a117840e28b6d05fede03a85f.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\02fca14a117840e28b6d05fede03a85f.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\0c4702e0a8ba40278541ef827dea8137.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\0c4702e0a8ba40278541ef827dea8137.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\24476a5e031044e5bff9f356b584a538.png",
+      "PackagePath": "staticwebassets\\product\\image\\24476a5e031044e5bff9f356b584a538.png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\251026fb1e23497cb4ac684212768261.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\251026fb1e23497cb4ac684212768261.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\4622525440fb4e56a1cab2287dc65a21.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\4622525440fb4e56a1cab2287dc65a21.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\4916d9c4c9bb475a9bf2fa74e4b164de.png",
+      "PackagePath": "staticwebassets\\product\\image\\4916d9c4c9bb475a9bf2fa74e4b164de.png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\6512bf4b8f5e47bb9468bd998714f613.txt",
+      "PackagePath": "staticwebassets\\product\\image\\6512bf4b8f5e47bb9468bd998714f613.txt"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\84422874939542dcbcf56dbd9b39aac7.rar",
+      "PackagePath": "staticwebassets\\product\\image\\84422874939542dcbcf56dbd9b39aac7.rar"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\85db2d4f406940879e4941ae080ffb1c.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\85db2d4f406940879e4941ae080ffb1c.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\ab9673f5a77a4dcb8fd198e3b4d162d1.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\ab9673f5a77a4dcb8fd198e3b4d162d1.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\d9f26a43ead2432c954b9e34431e950b.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\d9f26a43ead2432c954b9e34431e950b.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\image\\no-photo.jpg",
+      "PackagePath": "staticwebassets\\product\\image\\no-photo.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\thumb\\0c4702e0a8ba40278541ef827dea8137.jpg",
+      "PackagePath": "staticwebassets\\product\\thumb\\0c4702e0a8ba40278541ef827dea8137.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\thumb\\24476a5e031044e5bff9f356b584a538.png",
+      "PackagePath": "staticwebassets\\product\\thumb\\24476a5e031044e5bff9f356b584a538.png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\thumb\\251026fb1e23497cb4ac684212768261.jpg",
+      "PackagePath": "staticwebassets\\product\\thumb\\251026fb1e23497cb4ac684212768261.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\thumb\\4622525440fb4e56a1cab2287dc65a21.jpg",
+      "PackagePath": "staticwebassets\\product\\thumb\\4622525440fb4e56a1cab2287dc65a21.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\thumb\\4916d9c4c9bb475a9bf2fa74e4b164de.png",
+      "PackagePath": "staticwebassets\\product\\thumb\\4916d9c4c9bb475a9bf2fa74e4b164de.png"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\thumb\\85db2d4f406940879e4941ae080ffb1c.jpg",
+      "PackagePath": "staticwebassets\\product\\thumb\\85db2d4f406940879e4941ae080ffb1c.jpg"
+    },
+    {
+      "Id": "D:\\project\\themsmad.ir\\shop\\Shop\\wwwroot\\product\\thumb\\no-photo.jpg",
+      "PackagePath": "staticwebassets\\product\\thumb\\no-photo.jpg"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Shop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.Shop.props",
+      "PackagePath": "build\\Shop.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Shop.props",
+      "PackagePath": "buildMultiTargeting\\Shop.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.Shop.props",
+      "PackagePath": "buildTransitive\\Shop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
